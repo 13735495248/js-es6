@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        区分表达式和语句有什么作用:
+            在后期学习的vue中的插值表达式{{}},以及react中的jsx语法都用到了表达式,
+            如果你不知道什么是表达式,好多地方会看不明白. 
+        */
+        /* 
+        表达式
+          特点:所有表达式的结果都会产生一个值
+          判断一句代码是不是表达式:
+            1.左边定义一个变量接收,能接收到就是表达式
+            2.将代码放到if(){}圆括号中,不报错就是表达式
+        */
+        
+        /* 判断下面哪些是表达式 */
+        var a = 7;
+
+        var str = 'hello';
+
+        a+b;
+
+        function fun1(){
+
+        }
+
+        fun1();
+
+        var ary = [1,3,5,7];
+
+        ary.map((item)=>{
+            return item;
+        })
+
+        /* 
+        语句:主要控制代码的流程走向
+          if(){}
+          switch(){}
+          for(){}
+          while(){}
+         */
+    </script>
+</body>
+</html>

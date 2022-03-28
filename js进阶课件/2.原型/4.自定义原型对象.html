@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    function Student(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+    //原型对象的构造器constructor指向构造函数Student
+    console.log(Student.prototype.constructor);
+    //自定义原型对象 自定义后原型对象的构造器指向Object 我们需要手动修改构造器的指向
+    Student.prototype = {
+      //手动修改构造器的指向
+      constructor:Student,
+      height: "188",
+      weight: "55kg",
+      study: function () {
+        console.log("学习好开心啊");
+      },
+      eat: function () {
+        console.log("我要吃好吃的");
+      }
+    };
+    //修改完构造器的指向 现在指向Student
+    console.log(Student.prototype.constructor);
+
+    var stu=new Student("段飞",20,"男");
+    stu.eat();
+    stu.study();
+    console.dir(Student);
+    console.dir(stu);
+   </script>
+</body>
+</html>

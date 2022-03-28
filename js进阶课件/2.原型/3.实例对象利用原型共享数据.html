@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    思考下方法写在构造函数中有什么问题?
+      比如说有个Person构造函数,它有属性name和方法eat,然后用这个构造函数创建对象,每个
+      对象的name属性应该是不一样的,但是吃饭eat的方法都是一样的,因此eat方法可以共用一个,
+      而name属性不能共用一个,如果把eat方法和name属性都写在构造函数中,每创建一个实例都会
+      创建一个name属性和eat方法,显然这会造成内存浪费,有没有什么办法可以让所有实例共享方法呢?
+    */
+    function Person(name){
+        this.name = name;
+        this.eat = function(){
+            console.log('吃饭');
+        }
+    }
+    var p1 = new Person('刘备');
+    var p2 = new Person('关羽');
+    //查看p1的eat方法和p2的eat方法是不是同一个
+    console.log(p1.eat == p2.eat)//这个比较的原理还记得吗?
+
+    /* 原型可以用来实现所有实例共享方法 */
+    //什么样子的数据是需要写在原型中?
+    //需要共享的数据就可以写原型中
+    //原型的作用之一:实例对象数据共享
+
+    //属性需要共享,方法也需要共享
+    //不需要共享的数据写在构造函数中,需要共享的数据写在原型中
+    //构造函数
+    //    function Person(name,age){
+    //        this.name = name,
+    //        this.age = age
+    //    }
+    //    Person.prototype.study = function(){
+    //        console.log('每天都要学习');
+    //    }
+    //    Person.prototype.height = 170;
+    //    Person.prototype.like = {
+    //        study:10,
+    //        swim:7,
+    //        playgame:8
+    //    }
+
+    //    let p1 = new Person('dbb',18);
+    //    let p2 = new Person('dg',12);
+    //    console.log('p1.height:',p1.height);
+    //    console.log('p2.height:',p2.height);
+    //    console.log('p1.like:',p1.like);
+    //    console.log('p2.like:',p2.like);
+       
+
+       //总结：所有的实例可以共享原型上的方法和属性
+   </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    1.错误的类型
+      Error:所有错误的父类
+      ReferenceError:引用的变量不存在
+      TypeError:数据类型不正确
+      RangeError:数据值不在其所允许的范围
+      SyntaxError:语法错误
+    2.错误处理
+      捕获错误:try...catch
+      抛出错误:throw error   
+     */
+
+     //1.ReferenceError
+     //console.log(s);
+
+     //2.TypeError
+    //  var a = 1;
+    //  a();
+
+    //3.RangeError
+    // function demo(){
+    //   demo();
+    // }
+    // demo();
+
+    //4.SyntaxError
+    //let a = """";
+
+    //try...catch
+    //捕获错误
+    // try {
+    //     //把可能出错的代码放在try里面
+    //     console.log(a);
+    // }catch(err){
+    //     //如果try中出现了错误 携带错误代码来到catch中
+    //     //try...catch后面的代码仍然可以执行 不会阻塞主线程
+    //     console.log(err);
+        
+    // }
+    // console.log('hello');
+
+    //throw error
+    //抛出错误
+    function nowdate(){
+        var date = new Date();
+    if(date%2 === 0){
+      console.log('date是偶数');
+    }else{
+      throw new Error('date是奇数')
+    }
+  }
+
+  //错误代码做try...catch处理,后面的hello会执行
+  // try {
+  //   nowdate();
+  // } catch (error) {
+  //     console.error(error);
+  // }
+  //console.log('hello');
+  
+  //错误代码不做处理会阻塞主线程,后面的hello不会打印
+  // nowdate();
+  // console.log('hello');
+    
+    
+
+   </script>
+</body>
+</html>

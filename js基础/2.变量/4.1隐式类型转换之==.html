@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     /*隐式类型转换之!
+     !a 会把变量a转换成boolean类型再取反
+     如 ![] 空数组转boolean为true 取反 得到false
+     !"" 空字符串转boolean为false 取反 得到false
+   */
+
+    /*隐式类型转换之==
+    ==比较时 如果两边数据类型不一致 会进行数据类型转换
+      对象==对象 比较地址
+      对象==字符串 对象变为字符串
+      NaN == NaN NaN和自己以及其他值都不相等
+      null == undefined null和undefined只和对方相等 在两个等号下相等 三个等号下不相等
+      剩下的情况只要两边类型不同,最后都转换为数字类型Number
+    */
+
+    //例题
+    /*
+    console.log([]==false);//true 
+    解析:等号左边数组对象右边boolean类型 两边都转为数字比较
+    []转成0 false转成0 0==0 结果为true
+    */
+    // console.log(![]==false);//true
+
+   //  console.log([]==0);true
+   //  console.log(![]==0);true
+
+   //  console.log([]==![]);true
+   //  console.log([]==[]);false
+
+   //  console.log({}==!{});false
+   //  console.log({}=={});false
+   
+    
+    
+
+   </script>
+</body>
+</html>

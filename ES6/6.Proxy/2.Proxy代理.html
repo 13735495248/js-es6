@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    Proxy代理,Proxy是一个构造函数
+      给一个对象A找一个代理对象B,代理对象B可以控制对象A属性的读写
+      生活例子:买房子
+        中介和买家就是代理者和被代理者的关系,买家因为没有时间等原因,
+        需要中介帮他代理看房买房
+
+        代码中也是一样,出于安全等原因,某些对象不能直接操作属性,需要找
+        个代理对象来读取属性
+
+        Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，
+        都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。
+        Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。
+    */
+
+    
+        /* 
+        例子:
+          person1对象有个属性age等于18,直接获取会得到18
+          现在有这么一个需求,还是获取person1的age属性,
+          但是要加个判断:如果age小于18,获取到的是"未成年",大于等于18才获取年龄大小
+          我们用代理来实现
+         */
+        let person1 = {
+            name:"刘备",
+            age:17
+        }
+
+        /* 
+        Proxy需要传两个参数:
+          第一个代理对象
+          第二个配置对象
+         */
+        let p = new Proxy(person1,{
+            get(target,propKey){
+            // console.log('触发了p的get方法')
+            // console.log('target:',target);
+            // console.log('propKey:',propKey);
+            if(target[propKey] < 18){
+                return '未成年'
+            }else{
+                return target[propKey];
+            }
+            },
+            set(target,propKey,value){
+                
+                target[propKey] = value;
+                
+            }
+        });
+        
+
+    
+
+    
+    
+    
+   </script>
+</body>
+</html>

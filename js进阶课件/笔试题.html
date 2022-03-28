@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    // //例1
+   //  var obj = {n:1};
+   //  var obj2 = obj;
+   //  obj2.n = 2;
+   //  console.log(obj.n);
+
+    //例2
+   //  function fn1(a){
+   //    a.n = 3;
+   //  }
+   //  var obj = {n:2};
+   //  fn1(obj);
+   //  console.log(obj.n);
+   
+    // //例3
+    //函数实参传递基本类型形参接收的是值
+   //  function fn2(a){
+   //    a = 2;
+   //    console.log(a);
+   //  }
+   //  var x = 1;
+   //  fn2(x);
+
+    //函数实参传递引用类型形参接收的是地址
+   //  function fn2(a){
+   //     a = {n:4}
+   //     console.log(obj);
+   //  }
+   //  var obj = {n:2};
+   //  fn2(obj);
+   //  console.log(obj.n);
+    
+
+    // //例4
+   //  var a = {n:1};
+   //  var b = a;
+   //   a = {n:2};
+   //   a.x = a;
+   //  console.log(a.n,b.n);//
+   //  console.log(a.x,b.x);//
+
+    // //例5
+   //  var x = 10;
+   //  function fn(){
+   //      console.log(x);
+   //  }
+   //  function show(f){
+   //    var x = 20;
+   //    f();
+   //  }
+   //  show(fn)
+
+    // //例6
+    // var fn = function(){
+    //     console.log(fn);
+    // }
+    // fn();
+
+    // //例7
+    // var obj = {
+    //     fn2:function(){
+    //         console.log(fn2);
+    //     }
+    // }
+    // obj.fn2();
+
+    // //例8
+    // var a = 2;
+    // function fn(){
+    //     console.log(a);
+    //     var a = 3;
+    // }
+    // fn();
+
+    // //例9
+    // var a = 2;
+    // function fn(){
+    //     console.log(a);
+    //     a = 3;
+    // }
+    // fn();
+
+    // //例10
+    // var name = 'World!';
+    // (function(){
+    //     if(typeof name === 'undefined'){
+    //         var name = 'Tom';
+    //         console.log(name);
+
+    //     }else{
+    //         console.log(name);
+    //     }
+    // })();
+
+    // //例11
+    // var a = 6;
+    // setTimeout(() => {
+    //     console.log(0);
+    //     alert(a);
+    //     a = 666;
+    // }, 0);
+    // console.log(1);
+    // a = 66;
+
+    // //例12
+   //  function A(){
+
+   //  }
+   //  A.prototype.n = 1;
+   //  var b = new A();
+    
+   //  A.prototype = {
+   //      n:2,
+   //      m:3
+   //  }
+   //  var c = new A();
+   //  console.log(b.n,b.m,c.n,c.m);
+
+   //  //例12.1
+   //  var a = {name:'aaa'};
+   //  var b = a;
+   //  a = {name:'bbb'}
+   //  console.log(b.name);//aaa
+    
+   //  //例12.1
+   //  var a = {name:'aaa'};
+   //  var b = a;
+   //  a.name = 'bbb'
+   //  console.log(b.name);//bbb
+
+   //例13.
+   // function buildlist(list){
+   //    var result = [];
+   //    for (var i = 0; i < list.length; i++) {
+   //       var obj = {};
+   //       obj.item = list[i];
+   //       result.push(obj);
+   //    }
+   //    return result;
+   // } 
+   // var fnlist = buildlist([1,2,3]);
+   // console.log(fnlist);
+
+   //例14.
+   // function sayAlice(){
+   //    var sayAlert = function(){
+   //       console.log(alice);
+   //    }
+   //    var alice = "hello Alice";
+   //    return sayAlert;
+   // }
+   // var sayAlice2 = sayAlice();
+   // sayAlice2();
+
+   //例15.
+   // var x=1,y=0,z=0;
+   // function add(n){
+   //    n=n+1;
+   // }
+   // y = add(x);
+   // z = x + y;
+   // console.log("y1:"+y);
+   // console.log("z1:"+z);
+
+   //例16.
+   // var a = 6;
+   // setTimeout(() => {
+   //    alert(a);
+   //    a = 666;
+   // }, 1000);
+   // a = 66;
+
+   //例17
+   // function g(input){
+   //     var index = 0;
+   //     return {
+   //        next:function(){
+   //           if(index < input.length){
+   //              index += 1;
+   //              return input[index-1];
+ 
+   //           }
+   //           return "";
+   //        }
+   //     }
+   //  }   
+
+   //  var mg = g('hello');
+   //  mg.next();
+   //  console.log(mg.next());
+   //  mg = g('world');
+   //  console.log(mg.next());
+   
+
+
+   </script>
+</body>
+</html>

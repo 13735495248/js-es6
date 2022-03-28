@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+      在js中，加法运算的规则很简单，只会触发两种情况:
+      1. number + number//其他情况转number相加
+      2. string + string //出现string,对象,数组转string拼接
+      (1).所以，在JavaScript隐式转换规则中首先会推算两个操作数是不是number类型，如果是则直接运算得出结果。
+      (2).如果有一个值为string，则将另一个操作数隐式的转换为string，然后通过字符串拼接得出结果
+      (3).如果有一个值为布尔值这种简单的数据类型，那么将会转换为number类型来进行运算得出结果
+      (4).如果操作数为对象或者是数组这种复杂的数据类型，那么就将两个操作数都转换为字符串，进行拼接
+      (5).其他情况会将两边转换为数字相加
+     */
+    //console.log('1'+undefined);//'1'+'undefined'-->'1undefined'
+    //console.log(null+undefined);//'nullundefined' 第五种情况
+     //console.log([]+{});//第四种情况
+     //console.log(false+null);//第五种情况
+
+   //  let result = 1 + null + true + undefined + "TENCENT" + false + [] + undefined + null;
+   //  console.log(result);//NANTENCENTfalseundefinednull
+
+   console.log(1+'1');//同时出现数字和字符串,直接进行拼接
+   </script>
+</body>
+</html>

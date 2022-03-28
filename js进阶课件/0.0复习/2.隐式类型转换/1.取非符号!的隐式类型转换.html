@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // /* 取非符号!的基本使用 !true变false !false变true */
+        // console.log(!true);
+        // console.log(!false);
+
+        /* 思考 !"",![],!{} 结果是什么 */
+        console.log(!"");
+        console.log(![]);
+        console.log(!{});
+        /* 
+        为什么会有上面结果? 
+        取非符号 ! 会把后面的所有数据类型转换成boolean类型,然后取反
+        !""中,""转成false,取反为true;
+        ![]中,[]转成true,取反为false;
+        !{}中,{}转成true,取反为false;
+        */
+
+        /* 
+        不同类型如何转换请查看隐式类型转换表
+        该表需要记忆下来
+         */
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //this在函数中的指向 this是一个对象
+    
+    //this的指向在函数声明的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，
+    //实际上this指向那个 直接 调用它的对象
+
+    // //普通函数中的this是谁?----window
+    // function fun(){
+    //     console.log('普通函数',this);
+    // };
+    // fun();
+    
+    // //回调函数中的this是谁?----window
+    // setTimeout(function(){
+    //   console.log('回调函数',this);
+    // },2000)
+
+    //构造函数中的this是谁?-----实例对象
+    //创建实例时 new 关键字把this指向了实例对象
+    function Person(name){
+        this.name = name;
+        console.log('构造函数',this);
+    }
+    //var p = new Person('dbb');
+
+    //原型对象方法中的this是谁?---实例对象
+    //play方法是p实例调用的所以指向实例对象
+    Person.prototype.play = function(){
+        console.log('原型对象方法',this);
+    }
+
+    let p = new Person('dbb');
+    p.play();
+
+   </script>
+</body>
+</html>

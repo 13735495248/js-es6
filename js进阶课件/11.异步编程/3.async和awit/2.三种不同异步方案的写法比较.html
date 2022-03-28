@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     /* 
+     现在有3个异步任务吃饭,睡觉,打豆豆,我要先吃饭,再睡觉,再打豆豆
+     我们要怎么实现? 
+     */
+    //  setTimeout(function(){
+    //     console.log('吃饭') 
+    //  }, 0);
+    //  setTimeout(function(){
+    //     console.log('睡觉') 
+    //  }, 0);
+    //  setTimeout(function(){
+    //     console.log('打豆豆') 
+    //  }, 0);
+
+    /* 方法1:回调函数 */
+    //  setTimeout(function(){
+    //     console.log('吃饭') 
+    //     setTimeout(function(){
+    //     console.log('睡觉') 
+    //     setTimeout(function(){
+    //     console.log('打豆豆') 
+    //  }, 0);
+    //  }, 0);
+    //  }, 0);
+
+    /* 方法2:用Promise来实现 */
+    // new Promise(function(resolve,reject){
+    //     resolve();
+    // }).then(function(val){
+    //     console.log("吃饭");
+    // }).then(function(val){
+    //     console.log("睡觉");
+    // }).then(function(val){
+    //     console.log("打豆豆");
+    // })
+
+    /* 方法3:async,await */
+    async function dosomething(thing){
+      return new Promise((resolve)=>{
+          setTimeout(() => {
+            console.log(thing);
+            resolve();
+          }, 0);
+      })
+    }
+
+    async function todo(){
+        var res1 = await dosomething('吃饭');
+        var res2 = await dosomething('睡觉');
+        var res3 = await dosomething('打豆豆'); 
+    }
+    todo();
+   </script>
+</body>
+</html>

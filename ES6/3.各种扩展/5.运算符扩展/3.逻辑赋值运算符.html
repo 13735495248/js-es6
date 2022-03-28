@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        将逻辑运算符与赋值运算符进行结合使用
+        可以为变量赋默认值,逻辑赋值运算符:??=
+        */
+       {
+        function fun1(para){
+           var para = para ?? 'hello';
+           console.log(para);
+       }
+       fun1(0);
+
+       /* 使用逻辑赋值运算符改写 */
+       function fun2(para){
+           para ??= 'hello';
+           console.log(para);
+       }
+       fun2(undefined);
+       }
+    </script>
+     
+</body>
+</html>

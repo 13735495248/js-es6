@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+       "use strict";
+       /*
+       constructor()方法是类的默认方法，通过new命令生成对象实例时，
+       自动调用该方法。一个类必须有constructor()方法，如果没有显式定义，
+       一个空的constructor()方法会被默认添加。
+       可以在constructor函数中添加属性 
+        */
+    class Person{
+        constructor(name,age){
+            /* this指向实例对象p */
+            console.log(this);
+            this.name = name;
+            this.age = age;
+  
+        }
+    }
+    let p = new Person('dbb',18);
+    console.log(p)
+
+    
+   </script>
+</body>
+</html>

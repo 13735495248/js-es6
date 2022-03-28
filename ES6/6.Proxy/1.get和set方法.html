@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        属性的设置和获取是通过set和get方法来实现的
+          设置属性的时候会执行set方法
+          获取属性值的时候会触发get方法
+        */
+        {
+            let obj = {
+                get name(){
+                    return this._name;
+                },
+                set name(val){
+                    this._name = val;
+                }
+
+            }
+
+            //设置属性值会执行set方法
+            obj.name = 'dbb';
+            //获取属性值会触发get方法
+            console.log(obj.name);
+
+        }
+    </script>
+</body>
+</html>

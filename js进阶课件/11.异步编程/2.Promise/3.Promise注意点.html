@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    1.如何改变promise的状态
+      resolve
+      reject
+      抛出异常 
+    */
+    // var promise = new Promise(function(resolve,reject){
+    //     throw '错误';
+    // })
+    // console.log(promise);
+    /*
+    2.一个promise指定多个成功/失败回调函数,都会调用吗?
+      会.
+    */
+   new Promise(function(resolve,reject){
+     setTimeout(() => {
+       resolve(1);
+     }, 0);
+   }).then(function(val){
+     console.log(val);
+   }).then(function(val){
+     console.log(val);
+   })
+   </script>
+</body>
+</html>

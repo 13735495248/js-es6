@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    Object.defineProperty(对象,属性,配置对象) 方法会直接在一个对象上定义一个新属性，
+    或者修改一个对象的现有属性，并返回此对象 
+    */
+
+    let obj = {name:'刘备'};
+    let mage = 0;
+    Object.defineProperty(obj,'age',{
+        /* 
+        是否是可枚举的,如果是不可枚举的就不能被Object.keys和forin获取到
+        默认为false
+        */
+        enumerable:true,
+        /* 
+        是否可以被delete删除
+        默认为false
+        */
+        configurable:false,
+        /* 属性值 */
+        //value:18,
+        /* 
+        属性是否可读写
+        默认为false
+         */
+        //writable:true,
+        get(){
+          return mage;
+        },
+        set(val){
+            val = mage;
+        }
+    })
+    /* 注意:value,writable和get,set不能共存会报错 */
+    
+    // console.log(Object.keys(obj));
+    // for (const key in obj) {
+    //    console.log(key);
+    // }
+    //console.log(delete obj.age) ;
+    //console.log(obj.age);
+    obj.age = 30;
+    console.log(obj.age);
+   </script>
+</body>
+</html>

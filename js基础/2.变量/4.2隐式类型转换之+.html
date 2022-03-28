@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    // +可以作为字符串拼接符 或者数字相加符
+    //作为字符串拼接符:加号任何一边出现一个字符串 则两边都转换成字符串并拼接
+    //其他情况加号两边转换成数字相加
+    console.log('1'+undefined);
+    console.log(null+undefined);
+    console.log([]+{});
+    console.log(false+null);0
+
+    let result = 1 + null + true + undefined + "TENCENT" + false + [] + undefined + null;
+    console.log(result);
+   </script>
+</body>
+</html>

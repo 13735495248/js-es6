@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //定义一个构造函数Person
+    function Person() {
+
+    }
+    Person.prototype.eat=function () {
+    console.log("吃东西");
+    };
+
+    var per=new Person();
+    console.log(per);
+
+    //实例对象中有__proto__原型
+    //构造函数中有prototype原型
+	
+    //prototype是对象
+    //所以 prototype这个对象中也有__proto__,那么指向了哪里
+    //实例对象中的__proto__指向的是构造函数的prototype
+    //所以 prototype这个对象中__proto__指向的应该是某个构造函数的原型prototype
+
+    //per的__proto__指向Person.prototype
+    console.log(per.__proto__ === Person.prototype);
+    //Person.prototype.__proto__指向Object.prototype
+    console.log(Person.prototype.__proto__ === Object.prototype);
+    //原型链的最终指向Object.prototype.__proto__指向null
+    console.log(Object.prototype.__proto__);
+   </script>
+</body>
+</html>

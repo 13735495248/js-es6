@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     //定义一个构造函数Person
+    function Person(age,sex) {
+        this.age=age;
+        this.sex=sex;
+    }
+    Person.prototype.name = '刘备';
+    var per=new Person(10,"男");
+    per.name = 'dbb';
+    //因为JS是一门动态类型的语言,对象没有什么,只要点了,那么这个对象就有了这个属性
+    console.log(per);
+    
+    //实例对象访问这个属性,应该先从实例对象中找,找到了就直接用，
+    //找不到就去指向的原型对象中找
+    console.log(per.name);
+   </script>
+</body>
+</html>

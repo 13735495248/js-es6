@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+   /*阮一峰ES6:https://es6.ruanyifeng.com/ */
+    /*
+    let,const声明的变量不存在变量提升
+    let,const声明的变量在同一个作用域内不允许重复
+    let,const声明的变量一定要在声明后使用，否则报错。
+    let,const变量作用域是块级作用域
+     */
+    
+   /* 
+   ES6 新增了let命令，用来声明变量。它的用法类似于var，
+   但是所声明的变量，只在let命令所在的代码块内有效。
+   */
+   // if(true){
+   // var a = 10;
+   // let b = 1;
+   // }
+   // console.log(a);
+   // console.log(b); 
+
+
+   /* 不存在变量提升 */
+   // // var 的情况
+   // console.log(foo); // 输出undefined
+   // var foo = 2;
+
+   // // let 的情况
+   // console.log(bar); // 报错ReferenceError
+   // let bar = 2;
+
+
+   /* 
+   暂时性死区
+     只要块级作用域内存在let命令，
+     它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
+    */
+      // var tmp = 123;
+      // if (true) {
+      // tmp = 'abc'; // ReferenceError
+      // let tmp;
+      // }
+
+
+   /* 不允许重复声明 */
+   // // 报错
+   // function func1(){
+   // let a = 10;
+   // var a = 1;
+   // }
+
+   // // 报错
+   // function func1(){
+   // let a = 10;
+   // let a = 1;
+   // }
+
+
+   /* 
+   块级作用域 
+   ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。
+   内层变量可能会覆盖外层变量。
+   */
+   // var tmp = new Date();
+   // function f(){
+   //    console.log(tmp);
+   //    if(false){
+   //       var tmp = 'hello';
+   //    }
+   // }
+   // f();// undefined
+
+
+   /* 
+   ES6的块级作用域
+     所谓的块级作用域就是{},注意函数也有{}称为函数作用域,除了函数{}都叫块级作用域,注意区分
+     let,const声明的变量只在当前块级作用域有效
+    */
+   // var tmp = new Date();
+   // function f(){
+   //    console.log(tmp);
+   //    if(false){
+   //       let tmp = 'hello';
+   //    }
+   // }
+   // f();// 控制台打印出了日期
+
+
+   /* 
+   const 
+   声明一个常量,声明必须初始化,否则会报错
+   const a;(这样写会报错)
+   const命令声明的常量也是不提升,也只能在声明的位置后面使用。
+   */
+   // const  a = 1;   //const声明的常量必须初始化
+   // a = 2;  //错误，a不可以被改变
+
+   /* 
+   const实际上保证的，并不是变量的值不得改动，
+   而是变量指向的那个内存地址不得改动。 
+   */
+   // const foo = {};
+   // // 为 foo 添加一个属性，可以成功
+   // foo.prop = 123;
+   // foo.prop // 123
+
+   // // 将 foo 指向另一个对象，就会报错
+   // foo = {}; // TypeError: "foo" is read-only
+
+   </script>
+</body>
+</html>

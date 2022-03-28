@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //函数的返回值:在函数内部有return关键字,并且在关键字后面有内容,这个内容被返回了
+    //当函数调用之后,需要这个返回值,那么就定义变量接收即可
+    //注意:return下面的代码不执行
+
+   //return的特点：1.返回后面的内容 2.return后面代码不再执行
+
+    //计算两个数字的和并且返回
+    // function sum(a,b){
+    //   return a+b;
+    //   console.log('return下面的代码');
+    // }
+    // var c = sum(3,4);
+    // console.log(c);
+
+    // //返回两个数中较大的一个数
+    function consoleMax(a,b){
+      return (a>b?a:b);
+    }
+    var d = consoleMax(1,3);
+    console.log(d);
+
+    //return 会返回表达式计算之后的值 如果是一个变量就直接返回
+        //表达式判断://1.左边定义变量去接收 如果能接收到 就是表达式
+                    //2.把代码放到if()后面的圆括号中 不报错就是表达式
+                    //(特征)表达式一定是有返回值的
+        //常用表达式
+          // a
+          // a+b
+          // fun() 函数默认会返回undefined
+        
+        //常用语句
+          //if
+          //for
+          //while
+
+    </script>
+</body>
+</html>

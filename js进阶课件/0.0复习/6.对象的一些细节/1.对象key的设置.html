@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        对象的key要不要加引号? 
+          对于正常命名的key不加引号没问题
+        */
+        var p = {
+            name:'dbb',
+            age:'18'
+        }
+        console.log(p.name);
+
+        /* 对于这种特殊命名的key需要加引号,否则会报错 */
+        var p = {
+            "my-name":'dbb',
+            "my-age":18
+        }
+        //但是取值出问题了?怎么取值呢?
+        console.log(p.my-name);
+    </script>
+</body>
+</html>

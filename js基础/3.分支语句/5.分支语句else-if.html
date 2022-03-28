@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   if else-if语句
+     
+    //   语法:
+    //   if(表达式1){
+    //     代码1
+    //   }else if(表达式2){
+    //     代码2
+    //   }else if(表达式3){
+    //     代码3
+    //   }else{
+    //     代码4
+    //   }
+
+    //    例子: 成绩的结果是在85以上 显示优秀
+    //    如果成绩是在70到85(包含)之间,则显示良好
+    //    如果成绩是在60到70(包含)之间,则显示合格
+    //    如果成绩是在60以下,则显示不合格
+    
+    var score = prompt('请输入成绩');
+    if(score > 85){
+      alert('优秀')
+    }else if(score > 70){// 70<score<=85
+        alert('良好')
+    }else if(score >= 60){//    60=<score<=70
+        alert('合格')
+    }else{// score<60
+        alert('不合格')
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    Promise是什么? 
+      Promise的本质是一个构造函数
+      作用:用来封装异步操作
+      promise实例默认是初始化(pending)状态,状态只能从pending到fulfilled,
+      或者pending到rejected,并且状态一旦改变就不能再变.
+    */
+     var promise = new Promise(function(resolve,reject){
+         /*
+         此函数我们称为执行器(excutor)函数,一般在里面写异步代码!!!
+         该回调函数是同步回调?思考如何判断同步异步?
+         执行器函数有两个参数resolve和reject,它们都是函数
+           resolve可以将promise实例对象由初始化状态(pending)变成成功状态(fulfilled);
+           reject可以将promise实例对象由初始化状态(pending)变成失败状态(rejected)
+           promise状态不可逆,失败状态不能变成成功状态,成功状态也不能变失败状态
+         */
+        setTimeout(function(){
+            resolve(1);
+        }, 0);
+        
+     })
+     setTimeout(function(){
+        console.log(promise);
+     }, 0);
+
+     promise.then(function(value){
+      //promise实例成功状态所对应的回调函数 它是异步的回调 
+      console.log(value);
+    },function(reason){
+      //promise实例失败状态所对应的回调函数 它是异步的回调
+      console.log(reason);
+    })
+     
+    
+   </script>
+</body>
+</html>

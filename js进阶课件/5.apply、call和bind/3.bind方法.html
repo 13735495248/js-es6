@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+       let liubei = {
+        name:'刘备',
+        age:45,
+    }
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.loginfo=function(height,weight){
+        console.log('我叫'+this.name);
+        console.log('今年'+this.age+'岁');
+        console.log('身高'+height);
+        console.log('体重'+weight+'公斤');
+    }
+    let guanyu = new Person('关羽',39);
+    //guanyu.loginfo(170,70);
+    //1.bind直接复制了一份原来的方法
+    //console.log(guanyu.loginfo.bind());
+
+    //2.bind方法改变原来方法中的this指向
+    //不过它不会执行原来的方法只是进行了一次方法的复制 如果想执行原来的方法要加（）调用
+    //bind传参和call一样 都是直接放进去 中间用逗号隔开
+    guanyu.loginfo.bind(liubei,170,60)()
+
+    //改变定时器回调函数this指向
+    var obj = {};
+    setTimeout(function(){
+        console.log(this);
+    }.bind(obj), 1000);
+   </script>
+</body>
+</html>

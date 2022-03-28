@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //原型中的方法,是可以相互访问的
+
+    function Animal(name,age) {
+      this.name=name;
+      this.age=age;
+    }
+    //原型中添加方法
+    Animal.prototype.eat=function () {
+      console.log("动物吃东西");
+      console.log(this);
+      this.play();
+    };
+    Animal.prototype.play=function () {
+      console.log(this);
+      console.log("玩球");
+      this.sleep();
+    };
+    Animal.prototype.sleep=function () {
+      console.log("睡觉了");
+    };
+
+    var dog=new Animal("小苏",20);
+    dog.eat();
+
+    //原型对象中的方法,可以相互调用
+   </script>
+</body>
+</html>

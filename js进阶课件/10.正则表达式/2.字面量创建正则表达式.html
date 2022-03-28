@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    使用字面量创建正则表达式
+    语法:var 变量 = /正则表达式/匹配模式 (注意不要加引号)
+     */
+    // var reg = /a/i;
+    // console.log(reg.test('abc'));
+
+    /* 
+    使用 | 表示或者 
+    字符串是否包含a或b 包含返回true
+     */
+    // var reg = /a|b/;
+    // console.log(reg.test('bdfg'));
+
+    /* 
+    创建一个正则表达式检查一个字符串是否包含字母
+    []里面的关系也是或的关系
+    [a|b] == a|b
+    [a-z] 任意小写字母
+    [A-Z] 任意大写字母
+    [A-z] 任意字母
+    [0-9] 任意数字
+    */
+    //  var reg = /[A-z]/;
+    //  console.log(reg.test('fgh'));
+     
+    //检查一个字符串是否包含 abc 或adc 或aec
+    // var reg = /a[bde]c/
+    // console.log(reg.test('abcd'));
+
+    //[^a]检查一个字符串是否有除了a之外的内容
+    // var reg = /[^a]/;
+    // console.log(reg.test('a'));
+
+    //[0-9] 检查一个字符串是否包含数字
+    var reg = /[0-9]/;
+    console.log(reg.test('a6'));
+     
+
+
+   </script>
+</body>
+</html>

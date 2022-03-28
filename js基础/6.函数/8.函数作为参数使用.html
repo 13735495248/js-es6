@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //函数可以作为参数使用,如果一个函数作为参数,那么我们说这个参数(函数)可以叫回调函数
+    //只要是看到一个函数作为参数使用了,那就是回调函数
+
+    //第一种写法
+    // function sayHi(fn){
+    //     console.log('hi');
+    //     fn();
+    // }
+
+    // function sayHello(){
+    //     console.log('hello');
+    // }
+
+    // sayHi(sayHello);
+
+
+    //第二种写法(常用)
+    // function sayHi(fn){
+        
+    //     console.log('hi');
+    //     fn();
+        
+    // }
+
+    // sayHi(function(){
+    //    console.log('hello');
+    // })
+
+    //作用:回调函数可以指定代码块的执行位置,会使代码更加灵活
+    // function sayHi(fn){
+    //      fn();
+    //     console.log('hi');
+    //     
+    // }
+
+    // sayHi(function(){
+    //console.log('hello');
+    // })
+
+    //思考
+    // function delay(){
+    //     //延迟器 异步任务
+    //     setTimeout(()=>{
+    //       console.log('你好朋友');
+    //     },0);
+    // }
+    // delay();
+    // //如果我想在延迟结束之后打印 你好朋友 加油河南 怎么写？
+    // //直接在delay()后面打印？
+    // console.log('加油河南');
+
+    // function delay1(fn){
+    //     //延迟器 异步任务
+    //     setTimeout(()=>{
+    //       console.log('你好朋友');
+    //       fn()
+    //     },0);
+    // }
+    // delay1(function(){
+    //     console.log('加油武汉');
+    // });
+
+
+    //直接在delay()后面打印会先显示 加油河南 再显示你好朋友 why？
+    //有的同学会觉得是延时器延迟了2秒才后显示加油河南 我们试试延迟改为0
+
+    //常见的异步任务:setTimeout setInterval promise 
+    //解释event loop:js是单线程的，先执行同步任务，遇到异步任务会将异步任务放到任务队列，等同步任务
+    //执行完再执行异步任务
+    
+   
+    // console.log(111);//同步任务 111                //异步任务1 222
+    //                                               //异步任务2  333    
+    // setTimeout(()=>{//异步任务1
+    //  console.log(222);
+    // },0)
+    // setTimeout(()=>{//异步任务2
+    //  console.log(333);
+    // },0)
+    // console.log(444);//同步任务 444
+    
+
+
+    // function delay1(fn){
+    //     //延迟器
+    //     setTimeout(()=>{
+             //console.log('你好朋友');
+    //       fn();
+    //     },2000);
+    // }
+
+    // delay1(function(){
+    //     console.log('加油河南');
+    // })
+
+    
+    
+
+    </script>
+</body>
+</html>

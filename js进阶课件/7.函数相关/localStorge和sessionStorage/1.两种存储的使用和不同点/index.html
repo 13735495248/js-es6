@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+    <h1>首页</h1>
+   <script>
+    /* 
+    localStorage和sessionStorage的异同:
+      相同点:1.都是用来存储数据的
+            2.都只能存储字符串
+      不同点:localStorage(本地存储)是永久存储,数据存在本地磁盘,关闭网页数据都不会被删除
+             localStorage存储路径:
+                 C:\Users\你的计算机名\AppData\Local\Google\Chrome\User Data\Dedault\LocalStorage\leveldb
+                 文件夹下面的log文件
+             sessionStorage(会话存储)用于临时保存一个窗口的数据,关闭网页数据会被删除
+    */
+   /* 保存数据 */
+   localStorage.setItem('name','dbbbbbbbbbb');
+   sessionStorage.setItem('age',88);
+
+   /* 获取数据 */
+   console.log(localStorage.getItem('name'));
+   console.log(sessionStorage.getItem('age'));
+
+   /* 删除数据 */
+//    localStorage.removeItem('name');
+//    sessionStorage.removeItem('age');
+   </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+
+
+    /*
+    new关键字做了哪些事情?
+    */
+    
+
+    function Person(name){
+      this.name = name;
+    }
+    Person.prototype.eat = function(){
+      console.log('吃饭');
+    }
+
+    var p = new Person(name);
+    /* 
+    思考:new Person(name)发生了哪些变化
+      1.不加new,不会生成新对象,加了new生成了新的对象
+      2.新对象可以使用Person原型上的方法
+      4.不加new,this指向window,加了new this指向实例对象
+      4.不加new,没有返回值,加了new有了返回值
+     */
+
+     /* 
+      1.创建一个新对象
+      2.新对象的__proto__指向Person的prototype
+      3.用call方法把this设置为当前的实例对象
+      4.把新对象返回 
+    */
+
+    //代码实现
+    function newPerson(Fun){
+      /* 创建一个空对象 */
+      var tempobj = {};
+      /* 
+      新对象的__proto__指向Person的prototype
+      */
+      tempobj.__proto__ = Fun.prototype;
+      /* 
+      用call方法把this设置为当前的实例对象 
+      */
+      Fun.call(tempobj);
+      /* 把新对象返回 */
+      return tempobj;
+    }
+
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //递归:函数自己调用自己,此时就是递归,递归一定要有结束的条件
+    var i = 0;
+
+    function f1() {
+
+      i++;//关于i++和++i的区别你知道吗?
+
+      if (i < 5) {
+        f1();
+      }
+
+      console.log("从前有个山,山里有个庙,庙里有个和尚给小和尚讲故事:");
+    }
+
+    f1();
+   </script>
+</body>
+</html>

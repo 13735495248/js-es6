@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    Promise是异步编程的一种解决方案,在Promse出现之前,异步编程使用的是回调函数,
+    回调函数容易层层嵌套,造成"回调地狱".
+    下面举个例子来说明:
+    */
+     /* 
+     比如说,现在有3个异步任务吃饭,睡觉,打豆豆,我要先吃饭,再睡觉,再打豆豆
+     我们要怎么实现? 
+     */
+    //  setTimeout(function(){
+    //     console.log('吃饭') 
+    //  }, 0);
+    //  setTimeout(function(){
+    //     console.log('睡觉') 
+    //  }, 0);
+    //  setTimeout(function(){
+    //     console.log('打豆豆') 
+    //  }, 0);
+
+    //  setTimeout(function(){
+    //     console.log('吃饭') 
+    //     setTimeout(function(){
+    //     console.log('睡觉') 
+    //     setTimeout(function(){
+    //     console.log('打豆豆') 
+    //  }, 0);
+    //  }, 0);
+    //  }, 0);
+
+    /* 现在用Promise来实现 */
+    new Promise(function(resolve,reject){
+        resolve();
+    }).then(function(val){
+        console.log("吃饭");
+    }).then(function(val){
+        console.log("睡觉");
+    }).then(function(val){
+        console.log("打豆豆");
+    })
+   </script>
+</body>
+</html>

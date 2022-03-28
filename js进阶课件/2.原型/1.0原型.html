@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    什么是原型？
+    原型就是一个对象 我们也称为原型对象 原型和原型对象是一个东西的不同叫法
+    所有函数都有一个属性 prototype 指向原型对象
+    原型对象默认是个只有contructor属性的空对象{constructor: ƒ} 
+    */
+     function Person(){
+         
+     }
+     console.dir(Person);
+     
+   //   //所有对象都有个__proto__(浏览器可能显示[[Prototype]]意思一样)属性指向其构造函数的原型对象
+   //   var p1 =new Person();
+   //   var p2 = new Person();
+   //   console.log(p1.__proto__ === Person.prototype);
+   //   console.log(p2.__proto__ === Person.prototype);
+
+     //总结:构造函数和实例对象都有一个属性指向同一个原型对象
+     //那么这个原型对象就是构造函数和所有实例共享的
+     //画图表示
+
+     //原型对象的作用是什么？
+     //原型对象可以让所有的实例 共享方法
+
+    //  //在Person的原型对象上增加一个eat方法
+    //  Person.prototype.eat=function(){
+    //    console.log('吃饭');
+    //  }
+    //  var p1 =new Person();
+    //   //实例对象调用eat方法先从自身去寻找eat方法,如果找到则直接调用,如果没找到
+    //  //则去 原型对象 上去寻找
+    //  p1.eat();
+
+
+
+     
+   </script>
+</body>
+</html>

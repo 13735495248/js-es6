@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    1.split 可以将一个字符串拆分成数组
+     */
+    //var str = 'a1s2d4f5g'
+    // var result = str.split('s');
+    // console.log(result);
+    /* 根据任意字母来拆分 */
+    // var result = str.split(/[A-z]/);
+    // console.log(result);
+
+    /*
+    2.search 可以搜索字符串中是否还有指定内容
+    如果搜索到指定内容 会返回第一次出现的索引 否则返回-1
+    它可以接受一个正则表达式作为参数 然后会根据我们正则去检索字符串
+     */
+    //var str = 'qb137hfj5';
+    // var result = str.search('6137');
+    // console.log(result);
+    // var result = str.search(/1[234]7/);
+    // console.log(result);
+
+    /*
+    3.match 可以根据正则表达式 从一个字符串中将符合条件的内容提取出来
+    默认情况下match只会找到第一个符合条件的内容
+      我们可以设置匹配模式为g 这就会让match匹配所有内容
+      可以为一个正则设置多个匹配模式 前后顺序可以随便放 不会影响检索
+     */
+    //   var str = "as123rtt67";
+    //   var result = str.match(/[A-z]/ig);
+    //   console.log(result);
+
+    /*
+    4.replace(oldstr,newstr) 
+      oldstr:被替换的内容 可以使用正则表达式
+      newstr:新的内容
+     */
+    //var str = 'ed4r5f56gy6';
+    // var result = str.replace(/[0-9]/g,'*');
+    // console.log(result); 
+    //也可以删除不想要的字符串 把新的内容写成空字符串就可以了
+    // var result = str.replace(/[0-9]/g,'');
+    // console.log(result);
+   </script>
+
+</body>
+</html>

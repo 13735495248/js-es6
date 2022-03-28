@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+      
+    //作用域:变量和函数的使用范围 分为全局作用域和函数作用域
+    //函数的作用域是在函数创建的时候决定的而不是在调用的时候决定的
+    function foo(){
+       console.log(a);
+    }
+    function bar(){
+       var a = 3;
+       foo();
+    }
+    var a = 2;
+    bar();
+    //全局作用域:在函数外面定义的变量,称为全局变量,全局都可以使用
+   //  var a = 7;
+   //  function fun(){
+   //   console.log(a);
+   //   function fun1(){
+   //    console.log(a);
+   //   }
+   //   fun1()
+   //  }
+   //  fun();
+
+   //函数作用域:在函数内部定义的变量,称为局部变量,只能在函数的花括号里面使用
+   //  function fun(){
+   //   var b = 10;
+   //  }
+   //  fun();
+   //  console.log(b);
+
+   //只有函数的花括号里面定义的变量才称为局部变量
+   //它的作用范围只在函数花括号内部
+   //  if(true){
+   //    var b = 10;
+   //  }
+   //  console.log(b);
+
+
+//    //作用域链
+//    //使用函数中的变量 会先从该函数中去找
+// 　 //如果在当前函数作用域中没有查到值，就会去上级作用域找
+//    //直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链
+
+      // function fun1(){
+      //    function fun2(){
+      //    var num = 10;
+      //    console.log(num);
+      //    }
+      //    fun2()
+      // }
+      // fun1()
+   
+   // function fun1(){
+   //    var num = 10;
+   //    function fun2(){
+        
+   //      console.log(num);
+   //    }
+   //    fun2()
+   // }
+   // fun1()
+
+   // var num = 10;
+   // function fun1(){
+   //    function fun2(){
+   //      console.log(num);
+   //    }
+   //    fun2()
+   // }
+   // fun1()
+
+   // //练习
+   // var num = 10;
+   // function fun1(){
+   //    var num = 11;
+   //    console.log('aaa',num);
+   //    function fun2(){
+   //      var num =  12;
+   //      console.log('bbb',num);
+   //    }
+   //    fun2()
+   // }
+   // console.log('ccc',num);
+   // fun1()
+
+//    //预解析
+//    //在浏览器解析代码之前,把变量的声明和函数的声明提前(提升)到该作用域的最上面
+
+   //变量提升
+   // console.log(a);
+   // var a = 10;
+   //等价于
+   // var a;
+   // console.log(a);
+   // a=10;
+   
+   
+
+   //函数提升
+   //函数提升只会提升函数声明 不会提升函数表达式
+   // console.log(foo1); // [Function: foo1]
+   // foo1(); // foo1
+
+   // console.log(foo2); // undefined
+   // foo2(); // TypeError: foo2 is not a function
+
+   // function foo1 () {
+   //    console.log("foo1");
+   // };
+   // var foo2 = function () {
+   //    console.log("foo2");
+   // };//等价于下面
+   // var foo2;
+   // foo2 = function () {
+   //    console.log("foo2");
+   // };
+
+   </script>
+</body>
+</html>

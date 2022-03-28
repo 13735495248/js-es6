@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        return作用
+            1.终止当前函数,当前函数return下面的代码不再执行
+            2.返回return后面的表达式
+        */
+
+        //return下面代码不执行,打印hello
+        function fun1(){
+            console.log('hello');
+            return;
+            console.log('world');
+        }
+        fun1();
+
+        //return下面代码不执行,什么也不打印
+        function fun2(){
+            if(true){
+                return;
+            }
+            console.log('你好');
+        }
+        fun2();
+
+        //return在函数fun4中终止fun4函数,打印 天气阴雨
+        function fun3(){
+            function fun4(){
+                return;
+                console.log('天气晴朗')
+            }
+            fun4();
+            console.log('天气阴雨')
+        }
+        fun3();
+    </script>
+</body>
+</html>

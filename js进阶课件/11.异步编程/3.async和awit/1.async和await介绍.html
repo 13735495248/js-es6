@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    async函数:返回一个成功的promise对象
+    async表明函数里面有异步代码 
+    */
+    async function fn1(){
+        return 1;
+    }
+    console.log(fn1());
+    /*
+    await:
+      1.右边跟一个表达式,一般是一个promise对象 
+      2.必须写在async函数里面
+      3.返回值是promise的结果
+    */
+     async function fn2(){
+         var a = await Promise.resolve(2);
+         console.log(a);
+     }
+     fn2();
+     /* 
+     async和await一般成对出现,async,await是异步编程的终极解决方案,
+     它用同步的写法来实现了异步的功能.
+     */
+   </script>
+</body>
+</html>

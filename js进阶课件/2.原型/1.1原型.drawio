@@ -1,0 +1,73 @@
+<mxfile host="65bd71144e">
+    <diagram id="2cK7VlEyaSxhRb0ZOejU" name="第 1 页">
+        <mxGraphModel dx="1053" dy="1899" grid="1" gridSize="10" guides="1" tooltips="0" connect="0" arrows="0" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="32" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="-1240" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="line;strokeWidth=4;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;rounded=0;sketch=0;fontSize=16;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="-1205" width="210" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Person构造函数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="-1230" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="prototype属性" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="-290" y="-1190" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="-1120" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="line;strokeWidth=4;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;rounded=0;sketch=0;fontSize=16;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="-1085" width="210" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Person实例p1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="-1110" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="__proto__属性 浏览器上长这样[[prototype]]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="-290" y="-1070" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="-1180" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="line;strokeWidth=4;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;rounded=0;sketch=0;fontSize=16;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="-1145" width="210" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="原型对象{}" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="-1170" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="endArrow=classic;html=1;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;exitX=1.019;exitY=0.583;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-30" y="-1140" as="sourcePoint"/>
+                        <mxPoint x="90" y="-1140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="" style="endArrow=classic;html=1;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;exitX=1.007;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="41" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-30" y="-1140" as="sourcePoint"/>
+                        <mxPoint x="90" y="-1140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;" vertex="1" parent="1">
+                    <mxGeometry x="-300" y="-1010" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="" style="line;strokeWidth=4;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;rounded=0;sketch=0;fontSize=16;fontColor=#ffffff;fillColor=#60a917;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="-300" y="-975" width="210" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Person实例p2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" vertex="1" parent="1">
+                    <mxGeometry x="-280" y="-1000" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="__proto__属性 浏览器上长这样[[prototype]]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=0;fontSize=16;fontColor=#FF0000;" vertex="1" parent="1">
+                    <mxGeometry x="-290" y="-960" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="endArrow=classic;html=1;fontSize=16;fontColor=#FF0000;strokeColor=#006658;fillColor=#21C0A5;exitX=1.007;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.022;entryY=0.688;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="42">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-108.74000000000001" y="-947.5" as="sourcePoint"/>
+                        <mxPoint x="90" y="-1032.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

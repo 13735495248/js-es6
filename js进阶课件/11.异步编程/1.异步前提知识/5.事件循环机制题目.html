@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    
+    <script>
+        /* 
+        js事件循环机制(event loop)
+          js引擎是单线程的,同一时间只能执行一个任务,同步任务在主线程中进行,异步任务放到
+          任务队列中,所有同步任务执行完才会去读取执行异步任务队列中的任务.
+        */
+        //例1
+        //var i = undefined;
+        // for (i = 1; i < 3; i++) {//注意这里定义了全局变量i
+        //     setTimeout(function () {
+        //         console.log(i)//
+        //     }, 0)
+        //     console.log(i)
+        // }
+
+        //例2
+        // setTimeout(function(){
+        //     console.log(1);
+        // }, 0);
+
+        // function foo(){
+        //   console.log(2);
+        //   setTimeout(function(){
+        //       console.log(3)
+        //   }, 0);
+        // }
+        // foo();
+        // console.log(4);
+        
+
+        //例3
+        // setTimeout(function(){
+        //     console.log(1);
+        //     setTimeout(function(){
+        //         console.log(2);
+        //     }, 0);
+        // }, 0);
+
+        // function foo(callback){
+        //   //var callback = function(){console.log(4);}
+        //   console.log(3);
+        //   callback();
+        // }
+        // foo(function(){
+        //    console.log(4);
+        // });
+
+        //例4
+        // console.log(1)
+        // setTimeout(function(){
+        //     console.log(2);
+        // }, 2000);
+        // setTimeout(function(){
+        //     console.log(3);
+        // }, 1000);
+        // console.log(4);
+
+
+    </script>
+</body>
+
+</html>

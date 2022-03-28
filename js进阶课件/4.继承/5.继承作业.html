@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.like = function(){
+        console.log('人类喜欢美好事物');
+    }
+
+    //创建一个Teacher构造函数 使用组合继承或者寄生组合继承 继承Person的属性和方法
+    //并且Teacher拥有自己的属性height和方法teach
+
+    // //组合继承
+    // function Teacher(name,age,height){
+    //     //借用构造函数继承属性
+    //     Person.call(this,name,age)
+    //     this.height = height;
+    // }
+    // //原型继承方法
+    // Teacher.prototype = new Person();
+    // Teacher.prototype.teach = function(){
+    //     console.log('教书育人');
+    // }
+    // var t1 = new Teacher('dbb',18,170);
+    // console.log(t1.name,t1.age,t1.height);
+    // t1.teach();
+
+    //寄生组合继承
+    function Teacher(name,age,height){
+        //借用构造函数继承属性
+        Person.call(this,name,age)
+        this.height = height;
+    }
+    //寄生继承方法
+    var parasite = Object.create(Person.prototype);
+    Teacher.prototype = parasite;
+    Teacher.prototype.teach = function(){
+        console.log('教书育人');
+    }
+
+    var t1 = new Teacher('dbb',18,170);
+    console.log(t1.name,t1.age,t1.height);
+    t1.teach();
+   </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    分号和逗号使用简单总结:
+      逗号用于对象中属性的分割{name:'dbb',age:18} 数组中元素的分割[1,2,3]
+      其他地方基本上都是用分号 如全局代码块的分割,函数内部代码块的分割等
+
+      分号在js中不是必写的 js引擎会按一定的逻辑帮你加上分号(ASI自动分号插入机制)
+        如: var a = 1 引擎会帮你解析成 var a = 1;
+        但是部分情况下不加分号会报错
+          特别是以 ( 和 [ 开头的语句容易出错
+        因此 建议所有语句都加上分号 防止出现莫名其妙的错误
+      
+    */
+
+    //不加分号出错的例子
+    var a = 3;
+    var b = a
+    (function(){
+        console.log(6666);
+    })
+
+     //用逗号的例子
+     var obj = {
+         name:'dbb',//属性分割用逗号
+         eat:function(){
+             console.log('吃饭');
+         },//属性分割用逗号
+         age:18,//属性分割用逗号
+     }
+
+     var ary = [
+         'hello',//元素分割用逗号
+         function(){
+             console.log('匿名函数');
+         },//元素分割用逗号
+         888,//元素分割用逗号
+     ];
+
+     //用分号的例子
+     var a = 34;//全局代码块分割用分号
+     function run(){
+         var b = 44;//函数内代码块分割用分号
+         function drink(){
+
+         };//函数内代码块分割用分号
+
+     };//全局代码块分割用分号
+   </script>
+</body>
+</html>

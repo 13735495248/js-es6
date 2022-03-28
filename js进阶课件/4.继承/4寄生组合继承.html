@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //组合继承会调用两次父类的构造函数 稍微有点消耗内存 
+    //更完美的继承方式是 寄生组合继承:借用构造函数继承+寄生继承
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+        console.log('Person构造函数调用');
+    }
+    Person.prototype.eat = function(){
+        console.log('吃饭');
+    }
+
+    function Student(name,age){
+      //借用构造函数继承
+      Person.call(this,name,age)
+    }
+    //寄生继承
+    //1.利用Object.create()方法创建了一个实例对象 
+    //2.把实例的原型指向Person的原型
+    //也就是说parsite.__proto__ === Person.prototype
+    let parasite = Object.create(Person.prototype);
+    console.log(parasite)
+    console.log(create(Person.prototype))
+    //当Student的实例stu使用eat方法时先从Student对象内部找
+    //没找到 再从原型stu.__proto__上找也就是从Student.prototype上找 因为Student.prototype指向
+    //parasite 也就是从parasite上找 因为parasite是空对象 找不到 再从parasite.__proto__上找
+    //parasite.__proto__指向Person.prototype 所以找到了Person原型上的eat方法
+    Student.prototype = parasite;
+
+    var stu = new Student('刘备',45);
+    //console.log(stu);
+    //我们分析下使用stu.eat()的原型链
+    //stu.eat()=>stu.__proto__(Student.prototype===parasite)=>parasite.__proto__=>Person.prototype
+    
+    //Object.create()方法内部实现
+    function create(obj){
+        //定义一个空的构造函数
+        function Fun(){};
+        //Fun的原型指向obj
+        Fun.prototype = obj;
+        //新建Fun的实例o,此时o的原型也指向obj
+        var o = new Fun();
+        return o;
+
+    }
+   </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    函数中有一个arguments属性:实参对象
+      实参:函数调用的时候传的变量称为实参
+      形参:函数声明的时候定义的变量
+      arguments是一个类数组对象
+      arguments有一个length属性表示实参的个数 
+    */
+    function f1(x,y,z) {
+      //console.log(arguments);
+      //类数组对象和数组对象的异同
+      //1.类数组对象和数组一样有length属性，也可以通过索引获取属性的值
+      //如 arguments[0]获取的就是第一个实参 arguments[1]获取的就是第二个实参
+      console.log(arguments[0]);
+      console.log(arguments.length);
+      //2.类数组对象不能使用数组的方法 如果需要使用可以用call借用数组的方法
+      //例如我们借用数组的join方法
+      let str = Array.prototype.join.call(arguments);
+      console.log(Array);
+      
+    }
+    f1(3,5,6);
+    
+   </script>
+</body>
+</html>

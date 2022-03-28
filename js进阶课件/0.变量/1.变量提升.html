@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    预解析:
+      js引擎在js代码正式执行之前会先做一些预处理操作
+        1.寻找var关键字,变量赋值为undefined,并提升到当前作用域的最上面
+        2.寻找function关键字,将函数声明提升到当前作用域的最上面,
+        3.当var声明的变量和function声明的函数重名时,函数的优先级更高,
+          将函数声明提升到作用域最上面
+        注意:函数表达式定义函数时,函数不会提升
+        全局代码执行时和函数执行时都会进行预解析
+    */
+
+    //例1
+    /* 
+    代码执行前预解析,找到var声明的变量a,提前到最前面 
+    通过断点调试,查看预解析发生了什么
+    */
+    // console.log(a);
+    // var a = 10;
+    //上面代码预解析后和下面等价
+    // var a=undefined;
+    // console.log(a);
+    // a = 10;
+
+
+    // //例2
+    // console.log(fun1);
+    // console.log(fun2);
+    // function fun1() {
+    //     console.log('函数fun1');
+    // }
+    // var fun2 = function () {
+    //     console.log('函数fun2');
+    // }
+    // console.log(fun1);
+    // console.log(fun2);
+
+
+    // //例3
+    // var a = 10;
+    // console.log('f1:',a); // 
+    // function fun2() {
+    //     console.log('f2:',a); // 
+    //     var a = 20;
+    //     console.log('f3:',a); // 
+    // }
+    // fun2();
+
+    // //例4
+   //  var a = 1;
+   //  function fn1() {
+   //    console.log('f1:',a);
+   //      //不用var声明的变量称为隐式全局变量
+   //      a = 2;
+   //  }
+   //  fn1();
+   //  console.log('f2:',a);
+
+
+    // //例5
+    //https://www.cnblogs.com/joyco773/p/7821429.html
+    // function afn(a) {
+    //   console.log(a); 
+    //   var a = 2;
+    //   function a() {};
+    //   console.log(a)//2
+    // }
+    // afn(1);
+
+    //例5预解析后大概如下(伪代码)
+   //  function afn(a) {
+   //    //var a = 1;
+   //    //var a = function a(){}; 
+   //    console.log(a); 
+   //    a = 2;
+   //    console.log(a)
+   //  }
+   //  afn(1);
+
+ 
+  //  //例题6
+  //  if(!(b in window)){
+  //    var b = 1;
+  //  }
+  //  console.log(b);
+
+  //  //例题8
+   // var c = 1;
+   // function fun(c){
+   //  console.log(c);
+   //  var c = 10;
+   // }
+   // fun(2);
+
+   </script>
+</body>
+</html>

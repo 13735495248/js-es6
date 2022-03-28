@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //排列字母 sort会把数组元素转换成unicode编码再进行排序
+    let ary1 = ['sd','df','aa','rf','ca','q'];
+    ary1.sort();
+    console.log(ary1)
+
+    //排列数字(直接调用sort不可行)
+    let ary2 = ['88','120','45','340','50'];
+    //["120", "340", "45", "50", "88"]
+    ary2.forEach(el=>{
+        console.log(el.charCodeAt());
+    })
+    ary2 = ary2.sort();
+    console.log(ary2);
+
+    //升序排列
+    let ary3 = ['88','120','45','340','50'];
+    ary3.sort(function(a,b){
+        return a-b;
+    });
+    console.log(ary3);
+
+    
+
+    
+   </script>
+</body>
+</html>

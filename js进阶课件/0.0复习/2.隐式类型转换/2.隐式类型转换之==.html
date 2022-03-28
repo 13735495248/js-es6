@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+
+    /*隐式类型转换之==
+    ==比较时 如果两边数据类型不一致 会进行数据类型转换
+      (1).对象==对象 比较地址
+      (2).对象==字符串 对象变为字符串
+      (3).NaN == NaN NaN和自己以及其他值都不相等
+      (4).null == undefined null和undefined只和对方相等 在两个等号下相等 三个等号下不相等
+      (5).剩下的情况只要两边类型不同,最后都转换为数字类型Number
+    */
+
+   //例题
+   /*
+   解析:等号左边数组对象右边boolean类型 两边都转为数字比较
+   []转成0 false转成0 0==0 结果为true 
+   */
+   //console.log([]==false);
+   
+   /* 
+   ==左边![]先把[]转换成bool再取反得到false 和右边false相等 打印true
+   */
+   //console.log(![]==false);//
+
+   //  /* []转数字为0 左右相等 */
+   //  console.log([]==0);//true
+   //  /* ![]转成false再转成0 左右相等 */
+   //  console.log(![]==0);//true
+
+   //  console.log([]==![]);// [] == false --> 0 == 0-->true
+
+   //  console.log([]==[]);//对象==对象,比较地址,左右各创建了一个新对象,地址不同
+
+   //  console.log({}==!{});//{} == false -->NAN == 0-->false
+
+   //  console.log({}=={});//对象==对象,比较地址,左右各创建了一个新对象,地址不同
+   
+    
+    
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    js事件循环机制(event loop)
+      js引擎是单线程的,同一时间只能执行一个任务,同步任务在主线程中进行,异步任务放到
+      任务队列中,所有同步任务执行完才会去读取执行异步任务队列中的任务.
+    异步任务有哪些:
+      dom事件回调函数,ajax回调函数,定时器回调函数,promise中then的成功和失败回调
+    同步任务有哪些:
+      除了异步任务都是同步任务
+    */
+    //任务1
+    console.log(1);
+    setTimeout(function () {
+      //任务2
+      console.log(2)
+    }, 0);
+    setTimeout(function () {
+      //任务3
+      console.log(3)
+    }, 0);
+    //任务4
+    console.log(4)
+    /* 
+    我们来分析下为啥输出1,4,2,3
+      任务1和任务4是同步任务先在主线程中执行,任务2和任务3在定时器的回调函数中
+      是异步任务,放到异步队列中,等主线程中的任务执行完,再执行,因此,打印1,4,2,3
+    */
+
+    /* 
+    用吃饭来形象的比喻下js事件循环机制
+      嘴巴:相当于单线程,一次只能吃一种食物
+      油条和包子:相当于同步任务,可以直接吃,不用等
+      泡面和泡锅巴:相当于异步任务,需要等待泡好,不可以直接吃
+    */
+    console.log('吃油条');
+    setTimeout(function () {
+      //泡面需要泡一分钟才能吃
+      console.log('吃泡面')
+    }, 0);
+    setTimeout(function () {
+      //锅巴也需要泡一分钟才能吃
+      console.log('吃锅巴')
+    }, 0);
+    console.log('吃包子');
+    //先吃油条,再吃包子,吃完后再看泡面和锅巴有没有好,好了再吃泡面和锅巴
+
+
+  </script>
+</body>
+
+</html>

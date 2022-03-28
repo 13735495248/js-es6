@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.break:如果在循环中使用,遇到了break,则立刻跳出当前所在的循环
+        //也就是说break会跳到循环的花括号外面，执行下面的内容
+
+        // for(var i = 0;i<10;i++){
+        //    if(i === 3){
+        //        break;
+        //    }
+        //    console.log(i);
+        // }
+        // console.log('我是for循环下面的信息');
+
+        //2.continue:在循环中如果遇到continue关键字,直接开始下一次循环
+        //也就是说会跳到 条件语句 重新循环
+        for(var i = 0;i<10;i++){
+           if(i === 3){
+               continue;
+           }
+           console.log(i);
+        }
+        console.log('我是for循环下面的信息');
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>案例1</title>
+   <!-- 引入 echarts.js -->
+   <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+   <style>
+       .container{
+           display: flex;
+       }
+   </style>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class="container">
+        <div id="main" style="width: 600px;height:400px;"></div>
+        <div id="main1" style="width: 600px;height:400px;"></div>
+    </div>
+    
+   <script>
+    
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+      // 指定图表的配置项和数据
+      var option = {
+            title: {
+                text: 'js测试统计'
+            },
+            tooltip: {},
+            legend: {
+                data:['成绩']
+            },
+            xAxis: {
+                data: ["45","48","55","57","69","79","84",'88','91',"97"]
+            },
+            yAxis: {},
+            series: [{
+                name: '成绩',
+                type: 'bar',
+                data: [1,1,1,3,1,1,1,1,1,1],
+                itemStyle: {
+                    normal: {
+　　　　　　　　　　　　　　//好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                        color: function(params) {
+                            // build a color map as your need.
+                            var colorList = [
+                              '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                               '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+                               '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+　　　　　　　　　　　　　　//以下为文字是否显示，显示位置和显示格式的设置了
+                        label: {
+                            show: true,
+                            position: 'top',
+//                             formatter: '{c}'
+                            formatter: '{b}\n{c}'
+                        }
+                    }
+                },
+                //设置柱的宽度，要是数据太少，柱子太宽不美观~
+　　　　　　　　　　barWidth:50,
+            },
+
+        ]
+        };
+ 
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('main1'));
+ 
+        myChart1.setOption({
+            title:{
+                text:'js测试统计'
+            },
+            series : [
+                {
+                    name: '薪资范围',
+                    type: 'pie',    // 设置图表类型为饼图
+                    radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                    data:[          // 数据数组，name 为数据项名称，value 为数据项值
+                        {value:6, name:'60分以下'},
+                        {value:2, name:'60到80分'},
+                        {value:4, name:'80分以上'},
+                        
+                    ]
+                }
+            ]
+        })
+   </script>
+</body>
+</html>

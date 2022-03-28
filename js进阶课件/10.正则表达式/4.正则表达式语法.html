@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    量词
+    通过量词可以设置一个内容出现的次数
+     */
+    // var reg = /aaa/;
+    // console.log(reg.test('qwaaasr'));
+    
+    /* 
+    {n} 正好出现n次 
+    量词只对它前面的一个内容起作用
+    */
+    // var reg = /a{3}/;
+    // console.log(reg.test('qwaaasr'));
+    // var reg =/ab{3}/;
+    // console.log(reg.test('abbb'));
+
+    /*
+    {m,n} 出现m到n次
+    {m,} 出现m次以上 
+     */
+    // var reg = /a{1,3}/;
+    // console.log(reg.test('adfg'));
+    // var reg = /a{1,3}/;
+    // console.log(reg.test('adfg'));
+    // var reg = /a{1,}/;
+    // console.log(reg.test('aadfg'));
+
+    // * 匹配任意个数
+    // var reg = /ab*c/;
+    // console.log(reg.test('abbbc'));
+
+    /*
+    + 匹配1次或多次 相当于 {1,} 
+     */
+    // var reg = /ab+c/;
+    // console.log(reg.test('abc'));
+
+    /*
+    ? 匹配0次或1次 相当于{0,1}
+     */
+    // var reg = /ab?c/;
+    // console.log(reg.test('abbc'));
+
+    /*
+    ^ 匹配开头
+     */
+    //  var reg = /^a/;
+    // console.log(reg.test('abbc'));
+
+    /*
+    $ 匹配结尾
+     */
+    //  var reg = /a&/;
+    // console.log(reg.test('abbca'));
+
+    /*
+    \ 转义字符 
+     */
+    // var reg = /\?/;
+    // console.log(reg.test('?'));
+
+    /*
+    \s 空格 
+     */
+    //  var str = '1    hello    2';
+    // str = str.replace(/\s/g,'');
+    // console.log(str);
+
+    /*
+    [\u4e00-\u9fa5] 单个中文汉字
+     */
+   //  var reg = /[\u4e00-\u9fa5]/;
+   //  console.log(reg.test('中文'));
+
+
+    /*
+     作业创建一个正则表达式检验一个字符串是不是一个手机号
+     手机号:1 3 089893456
+     1.以1开头
+     2.第二位 是3到9
+     3.后面9位是数字
+     */
+    var reg = /^1[3-9][0-9]{9}$/;
+    var phone =  prompt('请输入手机号');
+    if(reg.test(phone)){
+       console.log('手机号输入正确');
+    }else{
+        console.log('手机号不正确');
+    }
+
+   </script>
+</body>
+</html>

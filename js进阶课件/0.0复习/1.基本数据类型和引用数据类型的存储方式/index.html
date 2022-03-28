@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /*  
+   基本数据类型:存储在栈
+   string number bool
+   */
+
+   /* 
+   引用数据类型:地址存储在栈 内容存储在堆
+     Object Array Function
+   */
+
+
+   //  /* 先看两个经典例题 思考输出的是什么 */
+   //  //(例1)
+   //  var a = 5;
+   //  var b = a;
+   //  a = 6;
+   //  console.log('a:',a);//
+   //  console.log('b:',b);//
+
+   //  //(例2)
+   //  var obj1 = {age:10};
+   //  var obj2 = obj1;
+   //  obj1.age = 99;
+   //  console.log('obj1.age:',obj1.age);//
+   //  console.log('obj2.age:',obj2.age);//
+
+   //  /* 
+   //  基本数据类型: Number String Boolean 存储在栈
+
+   //  引用数据类型:Object Array Function等(除了基本类型都是引用类型)
+   //  地址存储在栈 对象存储在堆
+   //  */
+
+   //  /*
+   //  举个形象的例子来说明例2
+   //  有两个空的楼,一个名字叫栈,一个名字叫堆,栈和堆里面都有许许多多空的房间,
+   //  堆里面的房间存放可以改变颜色的布娃娃,栈里面的房间存放一张写着地址的纸条,
+   //  地址内容是堆里面某个布娃娃的门牌号,通过这个纸条的地址可以找到堆里面的布娃娃.
+   //  下面通过代码来演示例2
+   //  */
+   // /* 堆中某个房间放着一个红色的叫佩奇的娃娃,栈中某个房间的纸条paper1写着佩奇的地址 */
+   // var paper1 = {name:'佩奇',color:'red'};
+   // /* 
+   // 把纸条paper1的地址拷贝到纸条paper2上,并在栈中找个新房间存放纸条paper2
+   // 现在纸条paper1和paper2上的地址是一样的,都是堆中红色佩奇房间的门牌号.
+   //  */
+   // var paper2 = paper1;
+   // /* 
+   // 通过纸条paper1上的地址找到布娃娃佩奇并把颜色变成蓝色
+   // */
+   // paper1.color = 'blue';
+   // console.log(paper1.color);
+   // console.log(paper2.color);
+
+   /* 题目变形 */
+   // var paper1 = {name:'佩奇',color:'red'};
+   // var paper2 = paper1;
+   // paper1 = {name:'喜洋洋',color:'yellow'}
+   // console.log(paper1.color);
+   // console.log(paper2.color);
+
+/* 再练习 */
+   var x = [12,23];
+   function fn(y){
+      //var y = x;
+      y[0] = 100;//y--->[12,23] 把[12,23]改成了[100,23]
+      y = [100];//y-->[100]
+      y[1] = 200;//y-->[100]改成了[100,200]
+      console.log('y:',y);
+   }
+   fn(x);
+   console.log('x:',x);
+   </script>
+</body>
+</html>

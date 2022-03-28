@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+
+    /*
+    自定义构造函数创建对象,我要自己定义一个构造函数,创建对象
+    函数和构造函数的区别；构造函数名字首字母是大写 
+    构造函数添加属性:this.属性名 = 属性值
+    构造函数添加方法:this.方法名 = 函数
+    构造函数创建实例对象:new 函数名(参数1,参数2,...)
+    */
+    function Person(name,age) {
+      this.name=name;
+      this.age=age;
+      this.sayHi=function () {
+        console.log("我叫:"+this.name+",年龄是:"+this.age);
+      };
+    }
+    // var obj=new Person("小明",10);
+    // console.log(obj.name);
+    // console.log(obj.age);
+    // obj.sayHi();
+
+    /*tips:
+    如果构造函数没有参数的话 创建实例也可以去掉括号 直接 new 函数名
+    */
+     function Duck(){
+      this.name = '鸭子';
+     }
+     var d = new Duck;
+     console.log('鸭子:',d);
+
+
+
+    // //自定义狗的构造函数,创建对象
+    function Dog(name,age,sex) {
+      this.name=name;
+      this.age=age;
+      this.sex=sex;
+    }
+    var dog = new Dog("大黄",20,"男");
+    //instanceof 用来判断左边的实例是不是右边的构造函数创建的
+    console.log(dog instanceof Person);//false
+    console.log(dog instanceof Dog);//true
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

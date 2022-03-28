@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+
+
+    /*
+    *
+    * 1.在内存中开辟(申请一块空闲的空间)空间,创建一个临时对象
+    * 2.把构造函数对象的原型赋给临时对象的原型
+    * 3. 把this设置为当前的实例对象
+    * 4. 把临时对象返回
+    * 
+    * var obj = new Person();
+    * 
+    * 1.var tempobj = {};
+      2.tempobj.__proto__ = Person.prototype;
+      3.Person.call(tempobj);
+      4.return tempobj
+    * */
+    function newPerson(){
+      var tempobj = {};
+      //可以使用构造函数原型对象的方法
+      //实例的原型指向了构造函数的原型
+      tempobj.__proto__ = Person.prototype;
+      //可以使用构造函数的属性
+      //把构造函数中的this指向了实例
+      Person.call(tempobj);
+      return tempobj;
+    }
+
+    function Person() {
+      this.name='刘备';
+      this.age=45;
+      this.sayHi=function () {
+        console.log("hi");
+      };
+    }
+
+    //创建对象
+    var obj=new Person();
+    console.log(obj);
+
+    // console.log(obj.name);
+    // console.log(obj.age);
+    // obj.sayHi();
+
+
+    //通过自定义构造函数实现下面的例子:
+    //创建一个小猫的对象,猫有颜色，体重，年龄,小猫可以抓耗子,可以打架
+
+
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

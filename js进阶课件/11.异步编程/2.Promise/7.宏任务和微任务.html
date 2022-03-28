@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     //异步任务队列又分为宏任务队列和微任务队列,微任务队列的优先级高于宏任务队列
+    //宏任务:dom事件回调,ajax回调,定时器(settimeout和setinterval)回调
+    //微任务:promise的then方法的成功和失败回调
+
+    //例子1
+   //  setTimeout(function(){
+   //      console.log(1);
+   //  }, 0);
+   //  Promise.resolve(1).then(function(value){
+   //      console.log(2);
+   //  });
+   //  console.log(3);//3 2 1 
+
+    //例子2
+    setTimeout(function(){
+        console.log(1);
+        Promise.resolve().then(function(value){
+            console.log(2);
+        })
+    }, 0);
+
+    setTimeout(function(){
+        console.log(3);
+    }, 0);
+
+    Promise.resolve().then(function(value){
+        console.log(4);
+    })
+
+    Promise.resolve().then(function(value){
+        console.log(5);
+    })//
+
+    //例3
+   //  setTimeout(function(){
+   //      console.log(1);
+   //  }, 0);
+   //  new Promise(function(resolve){
+   //      console.log(2);
+   //      resolve();
+   //  }).then(function(){
+   //      console.log(3);
+   //  }).then(function(){
+   //      console.log(4);
+   //  })
+   //  console.log(5);//2 5 3 4 1
+
+    //例4
+   //  new Promise(function(resolve){
+   //      setTimeout(function(){
+   //          resolve(1);
+   //          console.log(1)
+   //      }, 0);
+   //      console.log(2);
+   //      resolve(3);
+   //  }).then(function(val){
+   //      console.log(val);
+   //  });//2 3 1
+
+   
+   </script>
+
+</body>
+</html>

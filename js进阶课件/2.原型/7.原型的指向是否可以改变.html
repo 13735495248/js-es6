@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     //定义人的构造函数
+     function Person(name,age){
+        this.name = name;
+        this.age = age;
+        
+     }
+     //给人的原型对象添加eat方法
+     Person.prototype.eat = function(){
+         console.log('人的吃');
+     }
+     //定义学生的构造函数
+     function Student(){
+
+     }
+     //给学生的原型对象添加study方法
+     Student.prototype.study = function(){
+         console.log('学生学习');
+     }
+
+     //现在修改学生的原型 让他指向Person实例
+     Student.prototype = new Person('dbb',18);
+     //创建一个Student实例
+     let stu = new Student();
+     console.log(stu);
+     console.log(stu.name,stu.age);
+     stu.eat();
+     stu.study();
+    /* 
+    原型指向可以改变
+    实例对象的原型__proto__指向的是该对象所在的构造函数的原型对象
+    构造函数的原型对象(prototype)指向如果改变了,实例对象的原型(__proto__)指向也会发生改变
+    */
+
+     
+   </script>
+</body>
+</html>

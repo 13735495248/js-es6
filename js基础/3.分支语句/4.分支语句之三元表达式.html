@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //两个分支,最终的结果是两个分支中的一个,像这种情况可以使用三元表达式
+    // if(表达式){
+    //     代码1
+    //   }else{
+    //     代码2
+    //   }
+    
+    //  * 三元表达式
+    //  * 运算符号:  ?  :
+    //  *
+    //  *  语法:
+    //  *  var 变量=表达式1?表达式2:表达式3;
+    //  *  执行过程:
+    //  *  表达式1的结果是true还是false,如果是true则执行表达式2,然后把结果给变量
+    //  *  如果表达式1的结果是false,则执行表达式3,把结果给变量
+
+    //用三元表达式改写例子 判断年龄是否大于等于18岁，大于的话显示成年了，否则显示未成年
+    var age = prompt('请输入年龄');
+    var result;
+    result = age >= 18?'成年了':'未成年';
+    alert(result);
+
+    //等价于下面
+    // if(age >= 18){
+    //   result = '成年了';
+    // }else{
+    //   result = '未成年';
+    // }
+    
+    </script>
+</body>
+</html>

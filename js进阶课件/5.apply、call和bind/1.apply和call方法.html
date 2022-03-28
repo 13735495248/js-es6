@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    
+    //函数方法apply和call的作用
+    //1.调用函数的一种方式
+    function eat(){
+        console.log('吃饭');
+    }
+    //不传参数就相当于eat()
+    eat.apply();
+    eat.call();
+
+    //2.改变函数中this指向
+    let liubei = {
+        name:'刘备',
+        age:45,
+    }
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.loginfo=function(height,weight){
+        console.log('我叫'+this.name);
+        console.log('今年'+this.age+'岁');
+        console.log('身高'+height);
+        console.log('体重'+weight+'公斤');
+    }
+
+    let guanyu = new Person('关羽',39);
+    //guanyu.loginfo();
+    guanyu.loginfo.apply(liubei,[170,60]);
+    guanyu.loginfo.call(liubei,170,60);
+    //apply和call的区别
+    //第一个参数都是 this 新的指向对象
+    //第二个参数差别就来了:
+    //call 的参数是直接放进去的，第二第三第 n 个参数全都用逗号分隔，直接放到后面
+    //apply 的参数都必须放在一个数组里面传进去
+   </script>
+</body>
+</html>

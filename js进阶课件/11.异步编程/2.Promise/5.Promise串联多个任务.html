@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('数据1') 
+        }, 1000);
+        
+    }).then(function
+        (value){
+         console.log('第一个异步任务成功了,值为:',value);
+         return value;
+        }
+    ).then(
+        function(value){
+         console.log('开启了第二个异步任务');
+         var a = '数据2';
+         return new Promise(function(resolve,reject){
+             resolve(a);
+         })
+        }
+    ).then(
+        function(value){
+         console.log('第二个异步任务成功了,值为:',value);
+        }
+    )
+   </script>
+</body>
+</html>

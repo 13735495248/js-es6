@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    ES6 之前，不能直接为函数的参数指定默认值,可以用短路运算指定默认值,
+    但是短路运算存在一些问题.如下面代码当str为空字符串""时,因为 || 两边
+    的数据类型都会转换成boolean类型,""会转换成false,根据短路运算规则第一个
+    变量为false就会取第二个变量作为默认值,str变成hello
+    */
+    //  function fun1(str){
+    //      var str = str || 'hello';
+    //      console.log(str);
+    //  }
+    //  fun1("");
+
+    /* 
+    ES6允许为函数的参数设置默认值,语法:
+      在参数后面加上 =默认值
+      如下面代码,为函数func1的参数num设置了默认值1
+    */
+    // {
+    //   function func1(num = 1){
+    //      console.log(num);
+    //  }
+    //  func1("");//传空字符串,打印出空字符串,解决了短路运算传空串会赋默认值的问题
+    //  func1(99)//传递参数执行,打印出传递的参数
+
+    // }
+
+
+
+    /* 利用参数默认值,可以指定某个参数是必传项,不传递会报错 */
+    function throwError(str) {
+      throw `${str}参数是必填项`;
+    }
+    function func(num = throwError("num")) {
+      console.log(num);
+    }
+    func(333);
+  </script>
+</body>
+
+</html>

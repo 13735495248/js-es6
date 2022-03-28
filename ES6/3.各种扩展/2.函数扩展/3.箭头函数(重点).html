@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <script>
+        /*
+        箭头函数:
+          使用 => 表示一个函数
+       */
+        /* 形参的位置 */
+    // //1.没有形参的情况,()不能省略
+    // let fun1 = ()=>console.log('111');
+    // //2.当只有一个形参的情况,()可以省略
+    // let fun2 = a=>console.log('222');
+    // //3.当有多个形参的情况,()不可以省略
+    // let fun3 = (a,b)=>console.log('333');
+
+    // //箭头右边 --->函数体
+    // //1.当函数只有一条语句或者表达式的时候,{}可以省略
+    // //如果{}省略了,会自动返回当前语句的结果
+    // let fun4 = ()=>3;
+    // //2.当函数体有多条语句的时候,{}不可以省略
+    // let fun5 = ()=>{
+    //      console.log('444');
+    //      console.log('555');
+    // }
+
+
+        /*
+        箭头函数的this
+          箭头函数没有自己的this,箭头函数的this不是调用的时候决定的,
+          而是在定义的时候决定的,箭头函数的this和箭头函数所在的外层函数this相同
+          注意:不能直接修改箭头函数的this
+            箭头函数this判断:
+              //如果箭头函数外层有函数,外层函数的this就是箭头函数的this
+              //如果箭头函数外层没有函数,箭头函数的this是window
+         */
+
+        /* 例1 */
+    //  function foo() {
+    //  setTimeout(() => {
+    //     console.log('id:', this.id);
+    //   }, 100);
+    //  }
+    //  var id = 21;
+    //  foo.call({ id: 42 });
+    //  /* 变型 */
+    //  function foo() {
+    //  setTimeout(function(){
+    //     console.log('id:', this.id);
+    //   }, 100);
+    //  }
+    //  var id = 21;
+    //  foo.call({ id: 42 });
+
+        /* 例2 */
+    // var age = 99;
+    // var obj={
+    //         age:1,
+    //         sayhi:()=>{
+    //             console.log(this.age);
+    //         }
+    //     }
+    // obj.sayhi();
+    // /* 变型 */
+    // var age = 99;
+    // var obj={
+    //         age:1,
+    //         sayhi:function(){
+    //             console.log(this.age);
+    //         }
+    //     }
+    // obj.sayhi();
+
+        /* 例3 */
+    var name = 'html'
+    var obj1 = {
+        name: 'css',
+        fn1: function () {
+            console.log(this.name)
+        },
+        fn2: () => console.log(this.name),
+        fn3: function () {
+            return function () {
+                console.log(this.name)
+            }
+        },
+        fn4: function () {
+            return () => console.log(this.name)
+        }
+    }
+    var obj2 = {
+        name: 'js'
+    };
+
+    obj1.fn1();//
+    obj1.fn1.call(obj2);//
+
+    obj1.fn2();//
+    obj1.fn2.call(obj2);//
+
+    obj1.fn3()();//
+    obj1.fn3().call(obj2);//
+    obj1.fn3.call(obj2)();//
+
+    obj1.fn4()();//
+    obj1.fn4().call(obj2);//
+    obj1.fn4.call(obj2)();//
+
+
+    </script>
+</body>
+
+</html>

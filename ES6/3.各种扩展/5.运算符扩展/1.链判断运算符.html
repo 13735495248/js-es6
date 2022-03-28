@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        实际工作中，为了保证代码不出错,如果读取对象内部的某个属性，
+        往往需要判断一下，属性的上层对象是否存在。 
+        */
+        // {
+        //     let o1 = {
+        //         obj1:{
+        //             obj2:{
+        //                 name:'dbb'
+        //             }
+        //         }
+        //     }
+        //     let o2 = {
+        //             obj1:{
+        //                 name:'dbb'
+        //             }
+        //     }
+        //     /* 
+        //     获取对象内部的name属性 
+        //       下面的写法其实是错误的,因为传入的参数para可能不存在,
+        //       传入前需要判断一下
+        //     */
+        //     function getName(para){
+        //      console.log(para.obj1.obj2.name);
+        //     }
+        //     getName(o1);
+        //     getName(o2);
+        // }
+
+        // {
+        //     let o2 = {
+        //             obj1:{
+        //                 name:'dbb'
+        //             }
+        //     }
+        //     /* 正确的写法 */
+        //     function getName(para){
+        //         let a = para&&para.obj1&&para.obj1&&para.obj1.obj2.name||'default';
+        //         console.log(a);
+        //     }
+        //     getName();
+
+        // }
+
+        // {
+        //     /* 
+        //     上面的写法虽然可以判空,但是代码比较长,我们使用链运算符来优化一下写法
+        //     链运算符: ?.
+        //     */
+            let o2 = {
+                    obj1:{
+                        name:'dbb'
+                    }
+            }
+            /* 链运算符写法 */
+            function getName(para){
+                let a = para?.obj1?.obj2?.name||'default';
+                console.log(a);
+            }
+            getName();
+        //}
+
+        {
+            /* 
+            链判断运算符?.有三种写法。
+              obj?.prop // 对象属性是否存在
+                  等同于
+                  obj == null ? undefined : obj.prop
+              obj?.[expr] // 对象属性是否存在
+                  等同于
+                  obj == null ? undefined : obj[expr]
+              func?.() // 函数或对象方法是否存在 
+                  等同于
+                   func == null ? undefined : func()
+            */
+
+            let obj = {
+                name:'dbb',
+                eat:function(){
+                    console.log("去吃饭")
+                }
+            }
+            //obj?.prop
+            console.log(obj?.name);
+            //obj?.[expr]
+            console.log(obj?.["name"]);
+            //func?.(...args)
+            obj?.eat();
+            
+        }
+        
+
+        
+
+    </script>
+</body>
+</html>

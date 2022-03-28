@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <script src="./axios.js"></script>
+    <script src="./request.js"></script>
+    <style>
+        .app {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: calc(50vw - 10px);
+        }
+
+        .container img {
+            width: calc(50vw - 10px);
+            height: calc(50vw - 10px);
+        }
+
+        .container .name {
+            font-size: 20px;
+            color: red;
+
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- app里面有10个下面这些dom元素 -->
+        <div class="container">
+            <div class="name">华为手机....</div>
+            <img src="http://t.hk.uy/Cg5">
+        </div>
+        
+    </div>
+    <script>
+        $(document).ready(function () {
+            //分类列表接口
+            async function categorylist() {
+                var a = await post("categorylist", { categoryid: 2000 });
+                console.log(a);
+                for (var i = 0; i < a.length; i++) {
+                    $(".app").append(`
+                    <div class="container">
+                    <div class="name">${a[i].name}</div>
+                    <img src="${a[i].url}">
+                    </div>
+                `)
+
+                }
+
+            }
+            categorylist();
+
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

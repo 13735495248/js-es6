@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://www.jianshu.com/p/a74ce0c029ee
+        
+        //数据类型之间的转换主要是Number和String之间的转换
+        //为什么需要类型转换？
+        //比如你想计算两个字符串的和就必须把两个字符串转换成Number类型
+        //否则两个字符串相加就变成了字符串拼接了
+        // var num1 = '10';
+        // var num2 = '20';
+        // console.log(num1+num2);
+
+        //把字符串转成数字类型利用parseInt() 
+        //这样计算就正确了
+        //小技巧:浏览器控制台中蓝色的数字就表示Number类型
+        // var num1 = '10';
+        // var num2 = '20';
+        // console.log(parseInt(num1)+parseInt(num2));
+        // console.log('40');
+
+        //我现在想拼接两个Number数字而不是计算怎么办呢？
+        var num3 = 520;
+        var num4 = 1314;
+        //console.log(num3+num4);
+
+        //使用toString()将数字转换成字符串
+        console.log(num3.toString()+num4.toString());
+
+        //注意:两个Number类型中间用+号会计算求和
+        //两个String类型中间用+号会把两个字符串前后拼接起来
+        
+
+    </script>
+</body>
+</html>

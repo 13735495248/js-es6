@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    短路运算中,当变量是0,false或者空字符串也会被替换成默认值,
+    之前我们使用函数参数的默认值,解决了这个问题,ES6提供了
+    Null判断运算符 ?? 解决这种问题,??可以理解成优化版本的
+    短路运算
+    */
+
+    /* 短路运算例子 */
+   {
+    function fun1(para){
+           var para = para || 'hello';
+           console.log(para);
+       }
+       fun1(0);
+    
+   }
+
+   /* ?? 运算符例子 */
+   {
+    function fun1(para){
+           var para = para ?? 'hello';
+           console.log(para);
+       }
+       fun1(0);
+   }
+    
+   </script>
+</body>
+</html>

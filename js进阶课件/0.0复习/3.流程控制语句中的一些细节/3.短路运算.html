@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        短路运算 || 
+        1.只要“||”前面为false,不管“||”后面是true还是false，都返回“||”后面的值。
+        2.只要“||”前面为true,不管“||”后面是true还是false，都返回“||”前面的值。
+        假值有以下6个:
+          null undefined NaN false 0 ""
+    -->
+    <script>
+        // var a = 0;
+        // var b = 2;
+        // var num = a || b;
+        // //相当于下面if语句
+        // // if(a){
+        // //   num = a;
+        // // }else{
+        // //   num = b;
+        // // }
+        // console.log(num);
+
+        /* 
+        作用:
+            1.简化if语句
+            2.变量赋值时设置一个默认值,防止程序出错
+         */
+        // function fun(obj){
+        //   //如果参数obj不存在,下面代码会报错
+        //   console.log(obj.name);
+        // }
+        // function fun1(obj){
+        //   //给传入的参数obj一个默认值,如果传入的参数不存在则取默认值,防止出错
+        //   var obj = obj || {name:'dbb'};
+        //   console.log(obj.name);
+        // }
+        // fun1(undefined);
+        // fun(undefined);
+
+        /* 
+        练习
+        在promt对话框输入任意字符的用户名,点击确定显示用户名,如果不输入,显示"用户名不能为空"
+        */
+       var inputstr = prompt('请输入用户名');
+       //获取输入框的字符串赋值给username
+       var username = inputstr;
+       if(username){
+         //如果用户名存在,alert用户名
+         alert(username);
+       }else{
+         //如果用户名不存在,弹出 "用户名不能为空"
+         alert("用户名不能为空");
+       }
+
+       //使用短路运算改写
+
+
+
+
+
+
+
+
+
+
+
+       
+       /* 
+       使用短路运算改写
+       */
+       var inputstr = prompt('请输入用户名');
+       //获取输入框的字符串赋值给username,使用短路运算当inputstr为false时
+       //将username设置为默认值"用户名不能为空"
+       var username = inputstr||"用户名不能为空";
+       alert(username);
+
+    </script>
+    
+</body>
+</html>

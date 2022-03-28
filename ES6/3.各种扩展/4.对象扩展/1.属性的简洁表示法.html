@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+    当属性名和变量名同名时,可以简写
+    方法可以简写成 方法名(){} 这种形式
+    */
+    {
+	let o = 1;
+    let k = 2;
+    //es5
+    let es5 = {
+        o:o,
+        k:k,
+        say:function(){
+            console.log("hello");
+        }
+    };
+    //es6
+    let es6 = {
+        o,
+        k,
+        say(){
+            console.log("say");
+        }
+    };
+    console.log(es5,es6);
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //对象:由属性和方法组成
+    //对象是个工具箱有许多可以供我们使用的工具 如数组对象 有push pop splice unshift shift
+    //等等方法供我们使用 同时工具箱也有自己的属性 如数组有数组长度length等属性
+
+    //创建对象三种方式:
+    
+    //1  字面量的方式(常用)
+    //2  调用系统的构造函数
+    //3  自定义构造函数方式(重要)
+
+    //1字面量的方式
+    var person = {
+        name:'刘备',
+        age:45,
+        fight:function(){
+            console.log('刘备派出关羽参加战斗！');
+        }
+    }
+
+    //2.调用系统的构造函数
+    var person = new Object();
+    person.name = '刘备';
+    person.age = 45;
+    person.fight = function(){
+        console.log('刘备派出关羽参加战斗！');
+    }
+
+    //3.自定义构造函数
+    function Person(){
+        this.name = '刘备';
+        this.age = 45;
+        this.fight = function(){
+            console.log('刘备派出关羽参加战斗！');
+        }
+    }
+    var person = new Person();
+    // console.log(person);
+   </script>
+</body>
+</html>

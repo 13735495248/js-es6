@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="clickmsg()" id="text">你好 js</div>
+    <script>
+        //js的历史
+        //随着web的流行对客户端脚本的需求变大
+        //当时表单的验证需要大量与服务器往返通信（点击按钮 30秒返回你有一个字段没填）
+        //1995年网景公司Bredan Eich创建了可以在web端进行数据验证的语言 因为当时java流行 为了
+        //跟风就起名 javascript 没想到javascript一炮而红 微软看见javascript这么火 
+        //眼红了 便创建了相应的web脚本语言JScript 微软JScript的出现便意味着出现了两套
+        //不同语法的js语言 这让开发者很头疼 于是两套js语言的语法标准统一便提上了日程
+        //于是欧洲制造商会(ECMA)便拟定了一套js语言的语法规范称为 ECMAScript 简称ES
+
+        //js的组成
+        //js全称javascript 由三部分组成
+        //1. ECMAScript 标准----js的语法标准，规定了js的具体用法。
+        //https://es6.ruanyifeng.com/#docs/let 阮一峰es6总结
+
+        // 2. DOM------Document Object Model  文档对象模型Document对象
+         //console.dir(Document);
+         //document.getElementById('text').innerHTML = '河南加油';
+
+        // 3. BOM------Browser Object Model  浏览器对象模型window对象
+        //console.dir(window);
+        // window.alert('加油河南');
+
+        //js的作用
+        //HTML:显示页面内容
+        //CSS:给页面增加样式 美化页面
+        //JavaScript:用户和浏览器交互(鼠标在页面上点击等操作),
+        function clickmsg(){
+          console.log('点击了div');
+        }
+
+        //注意:1.js要写在script标签中或者单独创建一个js文件保存
+        //2.script标签一般是放在body的标签的最后的
+    </script>
+    
+</body>
+</html>

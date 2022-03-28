@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //  闭包的概念:在函数A中,有一个函数B,函数B中使用了函数A中定义的变量,此时B函数我们称为闭包
+    //  闭包的作用:延长外部函数变量的生命周期 缓存数据
+    //  缺点:内存不被释放
+    //  注意:用完及时清理(将内部函数设置为null)
+    
+    //实现一个简单的闭包
+    //函数f1里面有个函数f2并且f2使用了f1的变量num 这就形成了闭包
+     function f1() {
+
+        var num=10;
+
+        return function f2() {
+
+        num = num + 1;
+
+        console.log('num:',num);
+
+        }
+    }
+
+    var fun = f1();
+    
+    fun();
+   //  fun();
+    // //清理闭包
+    // fun = null;
+
+    // //闭包的作用:缓存数据
+    // function f1() {
+    //     //两个函数中间定义的被闭包使用的变量会被缓存
+    //     var num=10;
+    //     return function f2() {
+    //     num = num + 1;
+    //     console.log('num:',num);
+    //     }
+    // }
+    // var f = f1();
+    // f();
+    // f();
+
+    // //对比一下不用闭包
+    // function f3() {
+    //     var num=10;
+    //     num = num + 1;
+    //     console.log('num:',num);
+    // }
+    // f3();
+    // f3();
+    
+
+    // var count=10;
+    // function add(){
+    //     var count=0;
+    //     return function(){
+    //         count++;
+    //         alert(count);
+    //     }
+    // }
+    // var s=add()
+    // s();
+    // s();
+
+   </script>
+</body>
+</html>

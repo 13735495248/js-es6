@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+    //arguments称为类数组对象
+    //和数组相同的地方:它也有个length属性，表示的是函数实参的个数;也可以通过索引获取对应的实参
+    //和数组不同的地方:不可以使用数组的方法 如果需要使用数组的方法可以通过call借用数组方法
+    //Array.prototype.join.call(arguments)
+    // function fun(a,b){
+    //   //  var ary = [44,55,66];
+    //   //  console.log('数组:',ary);
+    //   //  console.log(ary.join());
+
+    //   // console.log(arguments);
+    //   //console.log(arguments[1]);
+    //   //console.log(arguments.length);
+    //   //console.log(a+b);
+    //   //console.log(arguments.join());
+    //   //console.log(Array.prototype.join.call(arguments));
+    // }
+    // fun(11,22,33);
+    
+    
+        function f1() {
+          //arguments----->数组使用------伪数组---
+          var sum=0;
+          for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+          }
+        
+        }
+    
+        f1(10,20,30);
+      </script>
+</body>
+</html>

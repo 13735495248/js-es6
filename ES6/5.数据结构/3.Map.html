@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    Map和Object类似都可以通过"键-值"来存储元素,和Object不同的是,
+    Object的键只能是字符串,而Map的键可以是任意类型.
+     */
+    {
+    //基本使用
+    let map = new Map();
+    let arr=['123'];
+    map.set(arr,456);
+    console.log('map',map,map.get(arr));
+    }
+
+    {
+    //Map的第二种定义
+    let map = new Map([['a',123],['b',456]]);
+    console.log('map args',map);
+    console.log('size',map.size);
+    console.log('delete',map.delete('a'),map);
+    console.log('clear',map.clear(),map);
+    }
+
+    {
+        //has(key),delete(key),clear()
+    let m = new Map();
+
+    m.set('edition', 6);
+    m.set(262, 'standard');
+    m.set(undefined, 'nah');
+
+    m.has('edition')     // true
+    m.has('years')       // false
+    m.has(262)           // true
+    m.has(undefined)     // true
+
+    m.delete(undefined)
+    m.has(undefined)       // false
+    }
+
+    {
+        //Map的遍历  Map遍历的顺序就是插入的顺序
+        let map = new Map([
+        ['F', 'no'],
+        ['T',  'yes'],
+        ]);
+
+        //遍历map
+        map.forEach(function (value, key, map) {
+        console.log(key,value);
+        });
+    }
+   </script>
+</body>
+</html>

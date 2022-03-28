@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    json本质是字符串,形式是我们js的对象的形式
+    json的作用:js中的对象只有js自己认识,其他语言不认识,
+    同样java中的对象只有java自己认识其他语言也认不出,那么,
+    如果我们想让java传对象给js怎么办呢?比如说我们服务器端语言
+    是java写的,需要java传一个对象给前端,这是实现不了的,因为语言不通,
+    有没有一种数据类型是几乎所有语言都能认识的呢?当然有那就是字符串,
+    因此我们在java和js之间可以通过字符串传递数据,字符串的格式五花八门,为了
+    规定一个统一的写法,json格式字符串便诞生了!
+
+    */
+    //JSON字符串特征:最外层是单引号 里面的每一项用双引号
+    //var objstr = '{"name":"kobe"}';
+    //JSON.parse方法把json字符串转换成json对象也就是我们的js对象
+   //  let obj = JSON.parse(objstr);
+   //  console.log('objstr:',objstr);
+   //  console.log("obj:",obj);
+
+   let obj1 = {
+      name:'刘备',
+      age:18
+   };
+   //JSON.stringify方法可以将json对象转换为json字符串
+   let obj1str = JSON.stringify(obj1);
+   console.log('obj1str:',obj1str);
+
+     
+   </script>
+</body>
+</html>

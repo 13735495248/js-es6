@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //什么是继承？
+    //在人类社会中儿子可以继承父辈的金钱，房产等等资源
+    //代码中也是一样，子对象A可以继承使用父对象B的属性,方法
+    //继承的作用：
+    //1.可复用性:减少重复代码
+    //2.可扩展性:子对象可以增加父对象没有的方法和属性
+    //下面举例说明
+
+    //人:  姓名, 性别, 年龄 ,吃饭, 睡觉 
+    //学生类别: 姓名, 性别, 年龄 ,吃饭, 睡觉,  学习
+
+    //定义人Person构造函数
+    function Person(name,sex,age){
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+    Person.prototype.eat = function(){
+        console.log('吃饭');
+    }
+    Person.prototype.sleep = function(){
+        console.log('睡觉');
+    }
+
+    // //定义学生Student构造函数
+    // function Student(name,sex,age){
+    //   this.name = name;
+    //   this.age = age;
+    //   this.sex = sex;
+    // }
+    // Student.prototype.eat = function(){
+    //     console.log('吃饭');
+    // }
+    // Student.prototype.sleep = function(){
+    //     console.log('睡觉');
+    // }
+    // Student.prototype.study = function(){
+    //     console.log('学习');
+    // }
+
+    //学生对象和人对象只有一个study方法不同 其他的属性和方法都相同
+    //我们这样定义学生的构造函数是没有问题的 但是有没有更好的办法可以简化代码呢？
+    //答案是肯定的 我们可以使用继承来简化重复的代码 我们让学生对象继承于人对象
+    //js通过使用原型来继承 下面我们重新写下Student的构造函数
+    function Student(){
+
+    }
+    Student.prototype = new Person('刘备','男',45);
+    //Person对象没有study方法 这里我们需要添加一个study方法
+    Student.prototype.study = function(){
+        console.log('学习');
+    }
+    var stu = new Student();
+
+    //打印属性和方法看是否存在 如果存在的话说明继承成功
+    console.log(stu.name,stu.age,stu.sex);
+    stu.eat();
+    stu.sleep();
+    stu.study();
+
+   </script>
+</body>
+</html>

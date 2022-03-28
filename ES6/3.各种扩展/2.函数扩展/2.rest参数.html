@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，
+        这样就不需要使用arguments对象了.
+        */
+
+        /* 利用arguments对象求多个数的和 */
+        function sum1(){
+            var c = 0;
+            for(var i=0;i<arguments.length;i++){
+                var num = arguments[i];
+                c = c + num;
+            }
+            return c;
+        }
+        console.log(sum1(1,2,3));
+
+        /* 利用rest参数求多个数的和 */
+        function sum2(...values){
+            var c = 0;
+            for(var i=0;i<values.length;i++){
+                var num = values[i];
+                c = c + num;
+            }
+            return c;
+        }
+        console.log(sum2(1,2,3));
+        
+        /* 
+        rest参数和arguments都可以用来传递多参数,rest参数的优势是什么?
+          rest参数是数组,可以使用数组方法
+          arguments对象是类数组对象,结构和数组相似,但是不能使用数组方法
+        */
+       function fun1(...values){
+         values.forEach(function(item){
+           console.log(item)
+         })
+       }
+
+       function fun2(){
+         arguments.forEach(function(item){
+           console.log(item)
+         })
+       }
+       fun1();
+       fun2();
+    </script>
+</body>
+</html>

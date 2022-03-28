@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //定义人Person构造函数
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+
+    //定义Student构造函数
+    function Student(name,age){
+       Person.call(this,name,age)
+       //Person.call(this,'小明',18);
+       //构造函数中的this指向实例对象
+       //Person.call(xiaoming,'小明',18)
+
+       /*
+       执行Person并传参数 小明 和 18
+       function Person(name,sex){
+       this.name = '小明';
+       this.age = 18;
+        } 
+        */
+
+        /*
+       把Person中的this指向变成 xiaoming
+       function Person(name,sex){
+       xiaoming.name = '小明';
+       xiaoming.age = 18;
+        } 
+        */
+
+       //Person.call()做了两个操作
+       //1.调用了一次Person构造函数
+       //2.改变了Person构造函数中的this指向 使得Person构造函数中
+       //的this指向了Person.call(this,name,age)方法中的第一个参数this
+       //Person.call(this,name,age)中的this因为在构造函数中所以指向了Student实例xiaoming
+       //因此就实现了我们创建Student实例时 实例继承了Person的属性name和age
+       
+       //上面Person.call(this,name,age)代码功能相当于下面：
+      //  xiaoming.name = name;
+      //  xiaoming.age = age;
+    }
+
+    var xiaoming = new Student('小明',18);
+    console.log('xiaoming.name:',xiaoming.name);
+    console.log('xiaoming.age:',xiaoming.age);
+   </script>
+</body>
+</html>

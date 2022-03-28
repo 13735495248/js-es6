@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    调试是指在某一行代码上打个标识,js引擎执行到这行代码时会停下来,
+    调试有两种方式:
+      1.浏览器调试台打断点调试
+        注意:打了断点的这行代码是不执行的,代码执行到打了断点的上一行
+      2.代码中使用debugger
+        注意:debugger下面的代码都不执行了
+     */
+     debugger;
+     function afun(){
+
+      console.log('函数内部hello')
+
+     }
+     //如果函数不执行的话,js引擎是不会执行函数体内容的
+     //afun();
+
+     console.log('hello');
+
+   </script>
+</body>
+</html>

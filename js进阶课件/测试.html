@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <script>
+        //第4题
+        // window.a = undefined;
+        // window.getNum = function getNum() {
+        //       a = 3; 
+        // } ;
+        //  console.log(a);
+        //  a = 1; 
+        //  getNum = function () {
+        //      a = 2; 
+        //  }; 
+
+        //  console.log(a); 
+        //  getNum() ;
+        //  console.log(a);
+
+        //第7题
+        // var f = function () {
+        //     var c = "ccc";
+        //     return { 
+        //     a: function () { return c; }, 
+        //     b: function (d) { c = d; } 
+        // }
+        // }();
+        // console.log(f.a());//ccc
+        // console.log(f.c);//undefined
+        // console.log(f.b("www"));//undefined
+
+        //第9题
+        // console.log([] === []);//false
+        // console.log([] == ![]);//true
+        // console.log(2 + '2');//22
+
+        //第10题
+        // var a = 2;
+        // var x = a;
+        // function foo(){};
+        // var x = foo;
+        //    undefined;
+        //    var x = undefined;
+        // if(true){return 2};
+        // var x = if(true){return 2};
+
+        //第11题
+        // function foo(p) {
+        //     var a = p || "hello";
+        //     console.log(a);
+        // }
+        // foo(undefined);
+
+        //第12题
+        // var a = 2;
+        // function foo() {
+        //     var a = 1;
+        //     return function foo1() { return a; }
+        // }
+        // console.log(foo());
+
+        //第13题
+        // var obj = {'d-name':"刘备",'age':18};
+        // console.log(obj["d-name"]);
+
+        //第20题
+        // var age = 20;
+        // function Person(age) { this.age = age; }
+        // Person.prototype.eat = function () { console.log(this.age); };
+        // var p = new Person(18);
+        // p.eat.apply(window);
+        // window = 30;
+
+        //第22题
+        // var age = 40;
+        // setTimeout(function () {
+        //     var age = 20; 
+        //     var obj = { age: 30 };
+        //     console.log(this.age);
+        // }, 0);
+
+        //第26题
+        // function foo() {
+        //     (function foo1() { return 2; }());
+        // }
+        // console.log(foo());
+
+        //第30题
+        // function foo() {
+        //     var a = 10;
+        //     return function foo1() {
+        //         var b = ++a; 
+        //         console.log(b);
+        //     }
+        // }
+        // var f = foo();
+        // f();
+        // f();
+
+        //第32题
+        Promise.reject(1).then(function (val) {
+            console.log(1);
+            return Promise.reject(4);
+        }, function (reason) {
+            console.log(2);//2
+            return Promise.resolve(3);
+        }).then(function (val) {
+            console.log(val);//3
+            throw 5;
+        }, function (reason) {
+            console.log(4);
+        }).then(function (val) {
+            console.log(6);
+        }, function (reason) {
+            console.log(7);//7
+        });
+
+    </script>
+</body>
+
+</html>

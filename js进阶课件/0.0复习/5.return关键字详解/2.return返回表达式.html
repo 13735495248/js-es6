@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        return作用
+            1.终止当前函数,当前函数return下面的代码不再执行
+            2.返回return后面的表达式
+        */
+       //例1
+       function fun1(){
+           return 1;
+       }
+       var a = fun1();
+       console.log('a:',a);
+
+       //例2
+       function fun2(){
+           function fun(){
+               return 2;
+           }
+           fun();
+       }
+       var b = fun2();
+       console.log('b:',b);
+
+       //例3
+       function fun3(){
+           return function fun(){
+
+           }
+       }
+       var c = fun3();
+       console.log('c:',c);
+
+       //例4
+       function fun4(){
+           return function fun(){
+                return 3;
+           }
+       }
+       var d = fun4();
+       console.log('d:',d);
+
+       //例5
+       function fun5(){
+        function fun(){
+            return 5;
+        }
+        return fun();
+       }
+       var e = fun5();
+       console.log('e:',e);
+
+        /* 总结:函数执行时看它返回什么,主要看函数内部有没有return:
+         1.没有return,函数末尾会自动加上return undefined,则函数返回undefined
+         2.有return,直接返回return后面的表达式,这里注意,如果后面的表达式可以运算或者执行,
+         要把最终结果返回 
+        */
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+<style>
+    .list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .list .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list .item .img{
+       width: 200px;
+       height: 180px;
+    }
+    .list .item .btn{
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <div class="list">
+        <div class="item">
+            <img class="img" src="images/1.jpg">
+            <div class="btn">点赞(1)</div>
+        </div>
+        <div class="item">
+            <img class="img" src="images/2.jpg">
+            <div class="btn">点赞(1)</div>
+        </div>
+        <div class="item">
+            <img class="img" src="images/3.jpg">
+            <div class="btn">点赞(1)</div>
+        </div>
+        <div class="item">
+            <img class="img" src="images/4.jpg">
+            <div class="btn">点赞(1)</div>
+        </div>
+
+    </div>
+    
+   <script>
+    //使用闭包缓存变量
+    function changeVal(){
+        var num = 1;
+       return function(){
+          //console.log(this);
+          num++;
+          this.innerHTML = `点赞(${num})`;
+       }
+    }
+    //获取所有class是btn的元素
+    var btns = document.getElementsByClassName('btn');
+    for (var btn of btns) {
+        //给按钮绑定点击事件
+        btn.onclick = changeVal();
+    }
+   </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //创建对象有三种方式
+    // 1.调用系统的构造函数创建对象
+    // var 变量名= new Object(); Object 是系统的构造函数
+
+    //实例化一个对象 aunt我们称为实例对象 抽象的对象概念不能使用 实例对象才能使用
+    //我们之前说对象类似工具箱 工具箱是一个抽象的概念 我们如果要使用是不是需要一个具体的工具箱
+
+     //对象由属性和方法组成
+     var aunt = new Object();
+     //添加属性-----如何添加属性?  对象.名字=值;
+     aunt.name="王阿姨";
+     aunt.age = 50;
+    
+     //添加方法----如何添加方法? 对象.名字=函数;
+     aunt.cook = function(){
+        console.log('买菜');
+        console.log('洗菜');
+        console.log('切菜');
+        console.log('炒菜');
+    };
+    aunt.lookafterbaby = function(){
+        console.log('给孩子喂奶粉');
+        console.log('给孩子换尿布');
+        console.log('哄孩子睡觉');
+    };
+
+    //获取属性 实例对象.属性名
+    console.log(aunt.name);
+    console.log(aunt.age);
+    
+    //使用方法 实例对象.方法名()
+    aunt.cook();
+    aunt.lookafterbaby();
+
+    //练习:创建一个手机对象,手机有型号,有颜色,可以打电话和发短信
+    // var huawei = new Object();
+    // huawei.model = 'Hua Wei 9 plus';
+    // huawei.color = '黑色';
+    // huawei.callphone = function(){
+    //     console.log('打电话');
+    // }
+    // huawei.sendmsg = function(){
+    //     console.log('发信息');
+    // }
+
+
+    //   2.自定义构造函数创建对象
+     
+     
+    //   3.字面量的方式创建对象
+     
+     
+     
+    </script>
+</body>
+</html>

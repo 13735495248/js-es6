@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     /* 
+     一个数据结构只要部署了Symbol.iterator属性，就被视为具有 iterator 接口，
+     就可以用for...of循环遍历它的成员。也就是说，
+     for...of循环内部调用的是数据结构的Symbol.iterator方法。
+     for...of循环可以使用的范围包括数组、Set 和 Map 结构、
+     某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、以及字符串。
+      */
+
+        const arr = ['red', 'green', 'blue'];
+
+        for(let v of arr) {
+        console.log(v); // red green blue
+        }
+
+        const obj = {};
+        obj[Symbol.iterator] = arr[Symbol.iterator].bind(arr);
+
+        for(let v of obj) {
+        console.log(v); // red green blue
+        }
+   </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+   <script>
+      var _createClass = function () {
+         function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+               /* 
+                  {
+               key: 'eat',
+               value: function eat() {
+                  console.log('吃饭');
+               }
+               }
+                */
+               var descriptor = props[i];
+               console.log(descriptor);
+               descriptor.enumerable = descriptor.enumerable || false;
+               descriptor.configurable = true;
+               if ("value" in descriptor) descriptor.writable = true;
+               console.log('descriptor:',descriptor);
+               //在原型上添加方法
+               //target-->Person.prototype
+               //descriptor.key-->'eat'
+               //descriptor-->value是eat函数
+               //Person.property.eat = function(){};
+               Object.defineProperty(target, descriptor.key, descriptor);
+            }
+         }
+         return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+         };
+      }();
+
+      function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+      var Person = function () {
+         function Person(name) {
+            _classCallCheck(this, Person);
+
+            this.name = name;
+         }
+
+         _createClass(Person, [{
+            key: 'eat',
+            value: function eat() {
+               console.log('吃饭');
+            }
+         }]);
+
+         return Person;
+      }();
+
+   </script>
+</body>
+
+</html>

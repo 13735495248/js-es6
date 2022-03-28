@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 一般通过 . 语法就可以读取和设置属性 */
+        var p = {
+            name:'dbb'
+        }
+        p.name = 'ooo';
+        console.log(p.name);
+
+        /* 对于特殊命名的key,可以通过 对象["属性名"] 进行读写 */
+        var p1 = {
+            "my-name":'dbb',
+            "my-age":18
+        }
+        p1["my-name"] = "sss";
+        console.log(p1["my-name"]);
+
+    </script>
+</body>
+</html>

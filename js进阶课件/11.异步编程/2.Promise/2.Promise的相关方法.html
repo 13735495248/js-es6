@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+  <script>
+    /*
+    1.Promise构造函数:Promise(excutor){}
+      excutor函数:同步执行 (resolve,reject)=>{}
+      resolve函数:内部定义成功时我们调用的函数
+      reject函数: 内部定义失败时我们调用的函数
+      注意:excutor会在Promise内部立即同步执行 异步操作在执行器中执行
+
+    2.Promise.prototype.then方法:(onResolved,onRejected)=>{}
+      onResolved:成功的回调函数
+      onRejected:失败的回调函数
+      then方法会返回一个新的promise实例
+
+    3.Promise.prototype.catch方法:(onRejected)=>{}
+      onRejected函数:失败的回调函数
+      注意:then的语法糖,相当于:then(undefined,onRejected)
+      catch方法会返回一个新的promise实例
+
+    4.Promise.resolve方法:(value)=>{}
+      value:成功的数据或promise对象
+      注意:返回一个成功的promise对象
+    
+    5.Promise.reject方法:(reason)=>{}
+      reason:失败的原因
+      注意:返回一个失败的promise对象
+    
+    6.Promise.all方法:(promises)=>{}
+      promises:包含n个promise的数组
+      注意:返回一个新的promise,只有所有的promise成功才成功 只要有一个失败了就直接失败
+
+    7.Promise.race方法:(promises)=>{}
+      promises:包含n个promise的数组
+      注意:返回一个新的promise,第一个完成的promise的结果状态就是最终的结果状态  
+     */
+
+    //1.Promise构造函数:Promise(excutor){}
+    //  var promise = new Promise(function(resolve,reject){
+    //     //执行器函数里面写异步代码
+    //     setTimeout(function(){
+    //       //将实例的状态变成fulfilled,并且传了成功的值1
+    //       resolve(1);
+    //     }, 0);
+    //  });
+
+    //2.Promise.prototype.then方法
+    //  var promise = new Promise(function(resolve,reject){
+    //     //执行器函数里面写异步代码
+    //     setTimeout(function(){
+    //       //将实例的状态变成fulfilled,并且传了成功的值1
+    //       resolve(1);
+    //     }, 0);
+    //  });
+
+    //  var promise1 = promise.then(function(val){
+    //    //当promise实例状态变为成功时进入这个回调函数,此时的值就是resolve函数的实参
+    //    console.log(val);
+    //  },function(reason){
+    //    //当promise实例状态变为失败时进入这个回调函数,此时的值就是reject函数的实参
+    //    console.log(reason);
+    //  });
+    //  setTimeout(() => {
+    //   console.log(promise1);
+    //  }, 100);
+
+    //3.Promise.prototype.catch方法
+    // var promise = new Promise(function(resolve,reject){
+    //     //执行器函数里面写异步代码
+    //     setTimeout(function(){
+    //       //将实例的状态变成rejected,并且传了失败的值1
+    //       reject(1);
+    //     }, 0);
+    //  });
+    //  var promise1 =  promise.catch(function(reason){
+    //    //实例状态变成rejected时进入此回调
+    //   console.log(reason);
+    //  })
+    //  console.log(promise1);
+
+    //4.Promise.resolve方法
+    //返回一个成功的promise实例
+    // var promise = Promise.resolve(1);
+    // console.log(promise);
+    // //等价于下面代码
+    // new Promise(function(resolve){
+    //   resolve(1);
+    // })
+
+    //5.Promise.reject方法
+    //返回一个失败的promise实例
+    // var promise = Promise.reject(1);
+    // console.log(promise);
+
+    //6.Promise.all方法
+    // var p1 = Promise.resolve(1);
+    // var p2 = Promise.reject(2);
+    // var p3 = Promise.resolve(3);
+    // Promise.all([p1,p2,p3]).then(function(val){
+    //   console.log(val);
+    // },function(reason){
+    //   console.log(reason);
+    // })
+
+    //7.Promise.race方法
+    var p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('success')
+      }, 1000)
+    })
+
+    var p2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject('failed')
+      }, 500)
+    })
+
+    Promise.race([p1, p2]).then((result) => {
+      console.log(result)
+    }).catch((error) => {
+      console.log(error)  // 打开的是 'failed'
+    })
+  </script>
+</body>
+
+</html>

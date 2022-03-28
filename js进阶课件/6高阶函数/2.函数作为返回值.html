@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    // function fun(){
+    //     console.log('fun方法');
+    //     return function eat(){
+    //         console.log('eat方法');
+    //     }
+    // }
+    // //获取到eat方法
+    // let e = fun();
+    // //执行eat方法
+    // e();
+
+
+    function fun(){
+        console.log('fun方法');
+        return function eat(){
+            console.log('eat方法');
+            return '我是eat方法的返回值'
+        }
+    }
+    //获取到eat方法
+    let e = fun();
+    //执行eat方法
+    let str = e();
+    console.log(str);
+   </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //如果原型指向改变了,那么就应该在原型改变指向之后添加原型方法
+       //人的构造函数
+       function Person(age) {
+         this.age=age;
+       }
+       //人的原型中添加方法
+       Person.prototype.eat=function () {
+         console.log("人正在吃东西");
+       };
+       //学生构造函数
+       function Student(sex) {
+         this.sex=sex;
+       }
+    
+       //改变了原型对象的指向
+       Student.prototype=new Person(10);
+       //学生的原型中添加方法(要在改变原型之后添加,在之前添加会失败,思考为什么?)
+       Student.prototype.sayHi=function () {
+         console.log("您好哦");
+       };
+       var stu=new Student("男");
+       stu.eat();
+       stu.sayHi();
+    
+       console.dir(stu);
+   </script>
+</body>
+</html>

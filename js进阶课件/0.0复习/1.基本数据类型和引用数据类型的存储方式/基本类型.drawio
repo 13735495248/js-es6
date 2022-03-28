@@ -1,0 +1,78 @@
+<mxfile host="65bd71144e">
+    <diagram id="_NlghI0VgxvpcC_Yuvu5" name="第 1 页">
+        <mxGraphModel dx="771" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="280" width="200" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="180" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="line;strokeWidth=2;direction=south;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="180" width="10" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="&lt;h1 style=&quot;text-align: left ; font-size: 12px&quot;&gt;var a=5;开辟一块内存空间 并将5赋值给变量a&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF0000;fontStyle=0;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="310" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="300" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="300" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="栈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="-30" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="40">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="270" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="&lt;h1 style=&quot;text-align: left ; font-size: 12px&quot;&gt;var b=a;开辟一块内存空间 并将a的值5赋值给变量b&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF0000;fontStyle=0;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="205" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="b" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="210" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="210" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="&lt;h1 style=&quot;text-align: left ; font-size: 12px&quot;&gt;a=6;将a对应内存空间中的值改为6(结果如图2)&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF0000;fontStyle=0;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="120" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="图1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="370" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="600" width="200" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="shape=partialRectangle;whiteSpace=wrap;html=1;left=0;right=0;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="180" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="line;strokeWidth=2;direction=south;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="180" width="10" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="a" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="300" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="300" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="栈" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="-30" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="b" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="210" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="210" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="图2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="370" width="40" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

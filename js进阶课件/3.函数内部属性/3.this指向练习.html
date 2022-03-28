@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+   /*  
+   this的指向在函数声明的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，
+   实际上this指向那个 直接 调用它的对象
+   */
+    // //1.
+    // var user = "张飞"
+    // function a(){
+    // var user = "关羽";
+    // console.log(this);
+    // console.log(this.user); 
+    // }
+    // a();
+
+    //2.
+    // var user = "刘德华"
+    // var o = {
+    // user:"周杰伦",
+    // fn:function(){
+    //     console.log(this);
+    //     console.log(this.user);
+    // }
+    // }
+    // o.fn();
+
+    // //3.
+    // var o = {
+    // a:10,
+    // b:{
+    //     a:12,
+    //     fn:function(){
+    //         console.log(this.a);
+    //       }
+    //     }
+    // }
+    // o.b.fn();
+
+    // //4.
+    // var o = {
+    // a:10,
+    // b:{
+    //     a:12,
+    //     fn:function(){
+    //         console.log(this);
+    //         console.log(this.a);
+    //         }
+    //     }
+    // }
+    // var j = o.b.fn;
+    // j();
+
+//     //5.
+//     const o1 = {
+//     text: 'o1',
+//     fn: function() {
+//         return this.text
+//     }
+//    }
+//    const o2 = {
+//     text: 'o2',
+//     fn: function() {
+//         return o1.fn()
+//     }
+//    }
+//    const o3 = {
+//     text: 'o3',
+//     fn: function() {
+//         var fn = o1.fn
+//         return fn()
+//     }
+// }
+// console.log(o1.fn())
+// console.log(o2.fn())
+// console.log(o3.fn())
+
+//7.
+// var student = {
+//     name: 'Lucas',
+//     fn: function() {
+//         return this;
+//     }
+// }
+// console.log(student.fn() === student)//true
+
+//8.
+var name = Lucy;
+var person = {
+    name: 'Lucas',
+    brother: {
+        name: 'Mike',
+        fn: function() {
+            return this.name
+        }
+    }
+}
+console.log(person.brother.fn())
+
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+      //自调用函数 函数声明的时候直接调用 只会执行一次
+      //作用：开启新的作用域 可以防止变量命名污染
+      function foo(){
+         console.log('你好');
+      };
+
+    //   function foo(){
+    //       console.log('开心最重要');
+    //   }
+      //第二个foo函数会把第一个foo顶替掉
+      foo();
+      //使用自调用函数则不会出现这个问题
+      
+         (function foo(){
+            console.log('开心最重要');
+         }());
+
+      
+   </script>
+</body>
+</html>

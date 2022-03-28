@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <script>
+        //例1
+        // var promise = new Promise(function(resolve, reject){
+        //     console.log(1);
+        //     resolve()
+        //     console.log(2);
+        // })
+        // promise.then(function(){
+        //     console.log(3);
+        // })
+        // console.log(4);//1 2 4 3
+
+        //例2
+        // var promise1 = new Promise(function(resolve, reject){
+        //     setTimeout(function(){
+        //         resolve('success')
+        //     }, 1000)
+        // })
+        // var promise2 = promise1.then(function(){
+        //     throw 'error!!!';
+        // })
+        // console.log('promise1', promise1)//成功 success
+        // console.log('promise2', promise2)//失败 error!!!
+
+        //例3
+        // var promise = new Promise(function (resolve, reject) {
+        //     resolve('success1');
+        //     reject('error');
+        //     resolve('success2');
+        // });
+
+        // promise.then(function (res) {
+        //     console.log('then: ', res)//success1
+        // }).catch(function (err) {
+        //     console.log('catch: ', err)//
+        // })
+
+        //例4
+        // Promise.resolve(1).then(function(res){
+        //     console.log(res)//1
+        //     return 2
+        // }).then(function(res){
+        //     console.log(res)//2
+        // }).catch(function(err){
+        //     return 3;
+        // });
+
+        //例5
+        // Promise.resolve().then(function(){
+        //     return new Error('error!!!');
+        // }).then(function(res){
+        //     console.log('res: ', res)// Error: error!!!
+        // },function(reason){
+        //     console.log('reason: ', reason);//
+        // });
+
+        //例6 值穿透
+        // Promise.resolve(1).then(2).then(function(val){
+        //     console.log(val);
+        // });
+
+        //例7 错误穿透
+        // Promise.resolve(1).then(function(val){
+        //     return Promise.reject(2);
+        // }).then(function(val){
+        //    console.log(val);//     
+        // }).then(function(val){
+        //     console.log(val);//      
+        // }).catch(function(reason){
+        //     console.log('reason:',reason);//2
+        // });
+
+        //例8(不懂没事,前面的题目弄懂就行)
+        var first = function () {
+            return new Promise(function (resolve, reject) {
+                console.log(3);
+                var p = new Promise(function (resolve, reject) {
+                    console.log(7);
+                    setTimeout(function () {
+                        console.log(5);
+                        resolve(6);
+                    }, 0);
+                    resolve(1);
+                })
+                resolve(2);
+                p.then(function (arg) {
+                    console.log(arg);
+                })
+            })
+        }
+        first().then(function (arg) {
+            console.log(arg);
+        })
+        console.log(4);//3 7 4 1 2 5
+    </script>
+</body>
+
+</html>

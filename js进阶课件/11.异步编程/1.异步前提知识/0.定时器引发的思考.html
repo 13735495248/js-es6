@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 打印顺序为什么不是1,2,3 */
+    console.log(1);
+    setTimeout(function(){
+        console.log(2)
+    }, 0);
+    console.log(3)
+
+   //这样写打印啥呢?
+   //  console.log(1);
+   //  setTimeout(console.log(2), 0);
+   //  console.log(3)
+   </script>
+</body>
+</html>

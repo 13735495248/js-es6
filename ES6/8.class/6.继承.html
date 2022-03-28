@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+       /*
+       Class 可以通过extends关键字实现继承，
+       这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。 
+        */
+      class Person{
+          constructor(name,age){
+              this.name = name;
+              this.age = age;
+          }
+          eat(){
+              console.log('吃饭');
+          }
+      }
+
+      class Student extends Person{
+          constructor(name,age,height){
+              /* 
+              super关键字，它在这里表示父类的构造函数 
+              子类必须在constructor方法中调用super方法，否则新建实例时会报错
+              */
+            super(name,age);
+            this.height = height;
+          }
+          drink(){
+              console.log('喝水');
+          }
+      }
+      var s = new Student('dbb',18,170);
+      console.log(s.name,s.age,s.height);
+      s.drink();
+   </script>
+</body>
+</html>

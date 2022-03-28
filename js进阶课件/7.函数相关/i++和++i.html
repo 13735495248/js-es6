@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    i++ 和 ++i 
+      i++ 即后加加，原理是：先自增，然后返回自增之前的值
+      ++i 即前加加，原理是：先自增，然后返回自增后的值
+      记住：不论是前++还是后++，都有个共同点是先自增。
+       (1) ++i 原理,等价于
+　　　　i = i+1;
+　　　　return i;
+       (2) i++ 原理,等价于：
+       var temp = i;
+　　　　i = i + 1;
+　　　　return temp;
+
+    */
+
+    // //例1
+   //  var i = 1;
+   //  var a = i++;
+   //  console.log('i:',i);//2
+   //  console.log('a:',a);//1
+   //  // //例2
+   //  var j = 1;
+   //  var b = ++j;
+   //  console.log('j:',j);//2 
+   //  console.log('b:',b);//2
+
+    //例3
+    var i = 1;
+    i = i++;
+    console.log(i);
+    i = ++i;
+    console.log(i);
+
+   </script>
+</body>
+</html>

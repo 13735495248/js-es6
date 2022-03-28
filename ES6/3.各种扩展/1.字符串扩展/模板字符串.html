@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+        普通字符串的缺点:
+          1.不支持多行
+          2.字符串中间不能使用变量
+        模板字符串解决了普通字符串的两个问题
+        模板字符串用 `` 表示
+        在模板字符串中使用 ${} 可以插入一个表达式
+        */
+    //    var num = 520;
+    //    var str = `我是中国人
+    //    我爱我的祖国!${num},china!
+    //    `;
+    //    console.log(str);
+
+          function fun1(){
+              return 'hello';
+          }
+
+          var str1 = `获取函数fun1的返回结果${fun1()}`;
+          console.log(str1);
+
+       
+
+        
+        
+
+    </script>
+</body>
+</html>

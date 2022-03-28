@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    ES6中新增了Symbol数据类型, 
+    之前的基本数据类型有6种：Undefined、Null、布尔值（Boolean）、
+    字符串（String）、数值（Number）、对象（Object）。
+    Symbol的作用:创建一个独一无二的值(Symbol不是字符串)
+    */
+     {
+         /* 
+         创建一个symbol类型的变量 
+         可以传参数来描述这个变量的作用
+         参数没有实际作用,可以理解成解释说明
+          */
+         let a = Symbol('我定义一个唯一的a变量');
+         let b = Symbol('变量b');
+         console.log(a === b);
+     }
+
+     {
+         /* symbol作为属性的key使用 */
+         let name = Symbol();
+         let obj = {
+             [name]:'dbb'
+         }
+         console.log(obj[name])
+     }
+
+     {
+         /* 
+         例子
+           开发一款多角色的游戏,用户需要选择角色的职业
+         */
+
+         var role = {
+             warrior:"warrior",//战士
+             magician:"magician",//法师
+             assassin:'assassin'//刺客
+         }
+
+         //创建角色函数
+         function createRole(type){
+          if(type === role.warrior){
+              console.log("创建了战士角色")
+          }else if(type === role.magician){
+              console.log("创建了法师角色")
+          }else if(type === role.assassin){
+              console.log("创建了刺客角色")
+          }
+
+         }
+
+         //执行创建角色函数,传入角色类型参数
+         createRole(role.warrior);
+         createRole(role.magician);
+         createRole(role.assassin);
+     }
+
+     
+   {
+    /* 
+      有没有发现其实role.warrior,role.magician
+      和role.assassin的值并不重要,我像下面这样写照样可以,
+      因此我们可以用Symbol替换role.warrior,role.magician
+      和role.assassin的值
+    */
+    let role = {
+             warrior:"fsrgrdfdf",//战士
+             magician:"而样色很多",//法师
+             assassin:'而融TB航天trtth'//刺客
+         }
+
+         //创建角色函数
+         function createRole(type){
+          if(type === role.warrior){
+              console.log("创建了战士角色")
+          }else if(type === role.magician){
+              console.log("创建了法师角色")
+          }else if(type === role.assassin){
+              console.log("创建了刺客角色")
+          }
+
+         }
+
+         //执行创建角色函数,传入角色类型参数
+         createRole(role.warrior);
+         createRole(role.magician);
+         createRole(role.assassin);
+   }
+   /* 总结:Symbol就是生成一个全局唯一的值 */
+   </script>
+</body>
+</html>

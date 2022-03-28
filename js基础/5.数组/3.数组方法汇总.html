@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.join
+        //join 就是把数组转换成字符串 然后给他规定个连接字符 默认的是逗号
+        // var ary1 = [1,2,3,4];
+        // console.log(ary1.join()); "1,2,3,4"
+        // console.log(ary1.join("-"));"1-2-3-4"
+
+        //2.push和pop(重要)
+        //push():  把里面的内容添加到数组末尾，并返回修改后的长度。
+        //pop()：移除数组最后一项，返回移除的那个值，减少数组的length。
+        // var ary2 = ['小红','小明','小华','小军'];
+        // var count = ary2.push('dbb');
+        // console.log(ary2);
+        // console.log(count);
+
+        // var item = ary2.pop();
+        // console.log(ary2);
+        // console.log(item);
+
+        //3.shift和unshift(和上面的push，pop相反，针对第一项内容)
+        // var arr = ["Lily","lucy","Tom"];
+        // var count = arr.unshift("Jack","Sean");
+        // console.log(count); 　　　　　　　　　　　　　　
+        // console.log(arr); 　　　　　　　　　　　　　　　
+        // var item = arr.shift();
+        // console.log(item); 　　　　　　　　　　　　　　
+        // console.log(arr);
+        
+        //4.reverse 数组反转，会改变原数组
+        // var arr = [13, 24, 51, 3];
+        // var ary1 = arr.reverse();
+        // console.log(arr); 　　　　　　　　
+        // console.log(ary1); 　　 
+
+        //5.concat
+        //将参数添加到原数组中。这个方法会先创建当前数组一个副本，
+        //然后将接收到的参数添加到这个副本的末尾，最后返回新构建的数组。
+        //在没有给 concat()方法传递参数的情况下，它只是复制当前数组并返回副本
+        // var ary1 = [1,3,5,7,9];
+        // var ary2 = ary1.concat();
+        // var ary3 = ary1.concat(99);
+        // console.log(ary1);
+        // console.log(ary2);
+        // console.log(ary3);
+
+        //6.splice 删除，插入，修改,会改变原数组(数组神器)
+        //splice(beginindex,length,item)
+        //beginindex:起始位置 length:要删除的项数 item:要插入的项
+        //删除
+        //var ary = ['a','b','c','d'];
+        // ary.splice(0,1);
+        // console.log(ary);
+
+        // ary.splice(1,1);
+        // console.log(ary);
+
+        //插入
+        //var ary = ['a','b','c','d'];
+        // ary.splice(0,0,'99');
+        // console.log(ary);
+
+        // ary.splice(2,0,'99');
+        // console.log(ary);
+
+        //修改
+        //var ary = ['a','b','c','d'];
+        // ary.splice(0,1,'aaaaa');
+        // console.log(ary);
+
+        // ary.splice(2,1,'ccccc');
+        // console.log(ary);
+
+        //7.forEach 对数组进行遍历循环（重要）
+        // var ary = ['a','b','c','d'];
+        // ary.forEach(function(val,index){
+        //     console.log(val,index);
+        // });
+
+
+        //8.map 对数组中的每一项运行给定函数，（重要）
+        //返回每次函数调用的结果组成的数组
+        //不会改变原数组
+        // var arr = [1, 2, 3, 4, 5];
+        // var arr2 = arr.map(function(item){
+        // return item*item;
+        // });
+        //console.log(arr2);
+        
+        // var goodslist = [
+        //     {name:'商品1',price:12,id:2001},
+        //     {name:'商品2',price:13,id:2002},
+        //     {name:'商品3',price:14,id:2003},
+        //     {name:'商品4',price:15,id:2004},
+        // ];
+
+        // var sumprice = goodslist.map(function(item){
+        //   return item.price;
+        // }).reduce(function(a,b){
+        //     return a+b;
+        // },0);
+
+        // console.log(sumprice);
+
+        // let sum = 0;
+        // for (let i = 0; i < goodslist.length; i++) {
+        //     const item = goodslist[i];
+        //     sum = sum + item.price;
+        // }
+        // console.log(sum);
+
+        //9.filter 过滤功能 数组中的每一项运行给定函数 （重要）
+        //返回 满足过滤条件组成的数组
+        //不会改变原数组
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // var arr2 = arr.filter(function(val) {
+        // return val >= 8;
+        // }); 
+        // console.log(arr2);
+
+        //10.every 判断数组中每一项都是否满足条件 只有所有项都满足条件 才会返回true
+        // var ary = [1,2,3,4,5,6,7];
+        // var bool = ary.every(function(val){
+        //    return val > 3;
+        // });
+        // console.log(bool);
+
+        //11.some 判断数组中是否存在满足条件的项 只要有一项满足条件 就会返回true
+        // var ary = [1,2,3,4,5,6,7];
+        // var bool = ary.some(function(val){
+        //    return val > 3;
+        // });
+        // console.log(bool);
+
+        //12.reduce a表示上一次调用回调时的返回值 b表示当前正在处理的数组元素
+        // var ary = [1,2,3,4,5,6,7];
+        // var sum = ary.reduce(function(a,b){
+        //     console.log(a,b);
+        //   return a+b;
+        // },0);
+        // console.log(sum);
+
+
+
+
+    </script>
+</body>
+</html>

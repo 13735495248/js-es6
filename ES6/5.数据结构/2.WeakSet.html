@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有下面区别。
+    1.WeakSet 的成员只能是对象，而不能是其他类型的值。
+    2.WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，
+    也就是说，如果其他对象都不再引用该对象，
+    那么垃圾回收机制会自动回收该对象所占用的内存，
+    不考虑该对象还存在于 WeakSet 之中。
+    3.WeakSet 只有add/delete/has 3个方法，不能遍历，没有size属性等
+    */
+   {
+     /* 传入数字会报错 */
+    //    let ws = new WeakSet();
+    //    ws.add(1);
+    /* 只能传入对象 */
+     let ws = new WeakSet();
+     ws.add({name:'dbb'});
+     console.log(ws);
+   }
+   </script>
+</body>
+</html>

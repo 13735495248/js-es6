@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    //定义人Person构造函数
+    function Person(name,sex,age){
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+    Person.prototype.eat = function(){
+        console.log('吃饭');
+    }
+    Person.prototype.sleep = function(){
+        console.log('睡觉');
+    }
+
+    //定义学生Student的构造函数
+    function Student(){
+
+    }
+    Student.prototype = new Person('刘备','男',45);
+    let stu = new Student();
+    console.log(stu.name,stu.sex,stu.age);
+
+    var stu1 = new Student();
+    //只有重新赋值才能改变属性
+    stu1.name = '关羽';
+    stu1.sex = '男';
+    stu1.age = 35;
+    console.log(stu1.name,stu1.sex,stu1.age);
+
+    //我们发现使用原型继承存在问题:因为改变原型指向的同时实现继承 
+    //直接初始化了属性 继承过来的属性的值都是一样的了
+    //只能重新调用对象的属性进行重新赋值,
+
+    //解决方案:继承的时候,不用改变原型的指向,直接调用父级的构造函数的方式来为属性赋值就可以了
+    //借用构造函数:把要继承的父级的构造函数拿过来,使用一下就可以了
+
+    //如何借用构造函数:构造函数名字.call(当前对象,属性,属性,属性....);
+    //解决了属性继承,并且值不重复的问题
+    //缺陷:父类中的方法不能继承
+    function Student(name,sex,age){
+      Person.call(this,name,sex,age)
+    }
+    let stu = new Student('张飞','男',33);
+    console.log(stu.name,stu.sex,stu.age);
+    stu.eat();
+    stu.sleep();
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    1.promise的错误穿透
+      当使用promise的then链式调用时 可以在最后指定失败的回调
+      前面任何操作出了错误 都会传到最后的回调中处理
+    2.中断promise链
+       在回调函数中返回一个pending状态的promise对象
+       new Promise(()=>{})
+     */
+
+    // new Promise((resolve,reject)=>{
+    //     setTimeout(() => {
+    //         reject(1);
+    //     }, 1000);
+    // }).then(
+    //     (value)=>{
+    //         console.log('成功的回调',value);
+    //     },
+    //     //如果开发人员没有在then里指定失败的回调 相当于写了这行代码
+    //     // (reason)=>{
+    //     //     throw reason;
+    //     // }
+    // ).catch(
+    //     reason=>{
+    //         console.log('失败的回调',reason);
+    //     } 
+    // )
+
+    new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve(1);
+        }, 1000);
+    }).then(
+        (value)=>{
+            console.log('成功的回调1',value);
+            return new Promise(function(){});
+        },
+    ).then(
+        val=>{
+            console.log('成功的回调2',reason);
+        } 
+    )
+   </script>
+</body>
+</html>

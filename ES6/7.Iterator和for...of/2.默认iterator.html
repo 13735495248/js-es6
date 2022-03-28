@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /* 
+    ES6 规定，默认的 Iterator 接口部署在数据结构的Symbol.iterator属性，
+    或者说，一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”（iterable）
+    Symbol.iterator属性本身是一个函数，就是当前数据结构默认的遍历器生成函数。
+    执行这个函数，就会返回一个遍历器。
+    拥有Symbol.iterator属性的数据结构都可以被forof循环遍历
+     */
+    // {
+    //     /* 
+    //     哪些数据类型有Symbol.iterator属性
+    //     Array
+    //     Map
+    //     Set
+    //     String
+    //     函数的 arguments 对象
+    //     NodeList 对象
+    //     */
+    //    let ary = ['a','b','c'];
+    //    let i = ary[Symbol.iterator]();
+    //    console.log(i);
+    //    console.log(i.next());
+    //    console.log(i.next());
+    //    console.log(i.next());
+    //    console.log(i.next());
+    // }
+
+    {
+        /* 
+        注意Object没有Symbol.iterator属性,所以对象不可遍历
+        */
+       let obj = {name:'dbb',age:18};
+       //console.log(obj[Symbol.iterator]);
+
+       /* 为对象添加一个遍历器 */
+       Object.prototype[Symbol.iterator] = function(){
+           let that = this;
+           let nextIndex = 0;
+           /* 获取key数量 */
+           let length = Object.keys(that).length;
+           /* 获取key数组 */
+           let keyAry = Object.keys(that);
+           return {
+               next(){
+                   console.log(this);
+                   return nextIndex<length?{value:that[keyAry[nextIndex++]],done:false}:
+                   {value:undefined,done:true};
+               }
+           }
+       }
+
+       let obj1 = {
+           name:'刘备',
+           age:20
+       }
+       for(let item of obj1){
+
+       }
+       
+
+    }
+
+   
+   </script>
+</body>
+</html>

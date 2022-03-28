@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+   /* 
+    call方法在函数Function原型上,所有函数实例都可以使用
+    作用:
+      执行某个函数并传参:
+        1.第一个参数:将函数内部的this,指向新的对象
+        2.除了第一个参数,后面所有的参数都是函数本身的参数
+   */
+   var name = '关羽';
+   var p = {
+      name:'刘备'
+   }
+   function person(age){
+      console.log('this.name:',this.name);
+      console.log(age);
+   }
+
+   person(18);
+   /* 改变person中this指向 */
+   person.call(p,18);
+   </script>
+</body>
+</html>

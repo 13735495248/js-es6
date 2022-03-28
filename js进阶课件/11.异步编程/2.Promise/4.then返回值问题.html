@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+    /*
+    promise.then()返回的新promise的值和状态由什么决定?
+      由then()指定的回调函数的返回值决定
+      详细分析:
+        1.如果then回调返回的是另一个新的promise 此promise的结果就会成为新promise的结果
+        2.如果then回调返回的是非promise的任意值a 新promise变为resolved 值为a
+        3.如果抛出异常 新promise变为rejected reason为抛出的异常
+        4.如果then回调没有返回值 新promise变为resolved 值为undefined
+     */
+
+    var p = new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve(111);
+        }, 1000);
+    })
+
+    var p1 = p.then(
+      function(value){
+        console.log('成功的回调1',value);
+        return 888;
+      },
+      function(reason){
+        console.log('失败的回调1',reason);
+      }
+      ).then(
+        function(value){
+            console.log('成功的回调2',value);
+            return Promise.reject(999);
+        },
+        function(reason){
+            console.log('失败的回调2',reason);
+        }
+      ).then(
+        function(value){
+            console.log('成功的回调3',value);
+        },
+        function(reason){
+            console.log('失败的回调3',reason);
+            return null;
+        }
+      ).then(
+        function(value){
+            console.log('成功的回调4',value);
+            throw 666;
+        },
+        function(reason){
+            console.log('失败的回调4',reason);
+        }
+      ).then(
+        function(value){
+            console.log('成功的回调5',value);
+        },
+        function(reason){
+            console.log('失败的回调5',reason);
+        }
+      )
+   </script>
+</body>
+</html>

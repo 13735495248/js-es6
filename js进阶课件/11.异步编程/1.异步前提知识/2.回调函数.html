@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+      /* 哪些代码是异步的? */
+      /* 回调函数分为同步回调函数 和 异步回调函数 */
+    //同步回调 立即执行 完全执行完了才结束 不会放入任务队列中
+    //例子:数组遍历的回调函数/Promise的excutor执行器函数
+   //  var ary = ["a","b","c"];
+   //  console.log(1);
+   //  ary.forEach(function(value){
+   //    console.log(value);
+   //  })
+   //  console.log(3);
+
+    //异步回调 不会立即执行 会放入任务队列中
+    //例子:延时器回调/ajax回调/Promise成功,失败的回调
+    console.log(1);
+    setTimeout(function(){
+      console.log(2);
+    }, 0);
+     console.log(3); 
+   </script>
+</body>
+</html>

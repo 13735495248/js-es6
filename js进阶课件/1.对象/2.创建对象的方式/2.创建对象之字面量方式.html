@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字面量方式创建对象
+        //一对花括号就是一个空对象
+        //var obj = {};
+        //可以在括号中用键值对的方式添加属性和方法
+        var person = {
+           name:'刘备',
+           age:'45',
+           position:'诸侯王',
+           fight:function(){
+               console.log('刘备派出关羽，张飞，赵云，马超，黄忠五虎上将参加了战争！');
+           }
+        };
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.position);
+        person.fight();
+
+
+        //作业用字面量方式创建一个法师对象
+        //法师身高172 体重60 性别是男 
+        //会使用技能火球术和冰爆术
+        var magic = {
+            height:172,
+            weight:60,
+            sex:'男',
+            fire:function(){
+                console.log('释放了火球术');
+            },
+            ice:function(){
+                console.log('释放了冰爆术');
+            }
+        }
+        console.log(magic.height,magic.weight,magic.sex);
+        magic.fire();
+        magic.ice(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+      /* 
+      构造函数 
+        构造函数可以理解成一个拥有创建对象能力的机器,通过 new 构造函数(参数)
+        就可以创建一个全新的对象
+      */
+      
+      function Person(name,age){
+        this.name = name;
+        this.age = age;
+        this.eat = function(){
+            console.log('吃饭');
+        }
+      }
+
+      //通过new Person()创建的对象,我们称为实例对象
+      //实例对象可以使用构造函数中的方法和属性
+      //实例化对象需要使用new关键字和构造函数
+      var xiaoming = new Person('小明',18);
+      //console.dir(xiaoming.name);
+
+      //实例对象是由构造函数创建的
+      //instanceof可以判断实例对象xiaoming是不是由Person这个构造函数创建的
+      //console.log(xiaoming instanceof Person);
+      //constructor属性也可以表示出实例的构造函数
+      //console.dir(xiaoming.constructor);
+
+      
+   </script>
+</body>
+</html>

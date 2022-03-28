@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //操作符:一些符号-----用来计算
+        // = 赋值运算符 把等号右边的值赋给左边的变量
+        // var a = 10;
+        // var b = a;
+
+        //算数运算符:  +  -  * /
+        // %取余数
+        // var num1 = 13;
+        // console.log(13%4);
+
+        //++ --自增自减
+         var num2 = 10;
+        // //++num2先加1再赋值 num2++先赋值再加1
+        // //  console.log('++num2',++num2);
+        // //  console.log('num2++',num2++);
+
+        // var num3 = num2++;
+        // console.log(num3);
+
+        // var num4 = ++num2;
+        // console.log(num4);
+
+        //var num3 = 10;
+        // console.log(--num3);
+        // console.log(num3--);
+
+        // let a = num3--;
+        // console.log('a',a);
+
+        // let b = --num3;
+        // console.log('b',b);
+
+        //关系运算符: >  <  >=  <=
+        /// ===严格相等 和 ==不严格相等 判断两个变量是否相等 我们判断相等要用===
+        //严格相等指数据类型和值都要相等 不严格相等只需要值相等
+        // var num = 1;
+        // var str = '1';
+        // console.log(num === str);
+        // console.log(num == str);
+
+        // ||和&&
+
+        /* 
+        ||两边都为假 表达式返回一个 假值
+        ||两边任何一个为真 表达式返回一个真值
+        ||两边真假值共有四种情况
+          真值&&真值 返回左操作数
+          真值&&假值 返回左操作数
+          假值&&假值 返回右操作数
+          假值&&真值 返回右操作数
+
+        总结:总结:||表达式中左操作数为真则返回左操作数 否则返回右操作数(左真为左)
+         */
+        //真真
+        // var c = ('123' || '456');
+        // console.log(c);
+
+        //假假
+        // var c = (undefined || null);
+        // console.log(c);
+
+        //真假
+        // var c = ('123' || null);
+        // console.log(c);
+
+        //假真
+        // var c = (null || '123');
+        // console.log(c);
+       
+
+        /* 
+        &&两边都为真 表达式返回一个 真值
+        &&两边任何一个为假 表达式都返回一个假值
+        &&两边真假值共有四种情况
+          真值&&真值 返回右操作数
+          真值&&假值 返回右操作数
+          假值&&假值 返回左操作数
+          假值&&真值 返回左操作数
+        
+        总结:&&表达式中左操作数为假则返回左操作数 否则返回右操作数(左假为左)
+        */
+        
+        //真真
+        // var c = ('123' && '456');
+        // console.log(c);
+
+        //假假
+        // var c = (undefined && null);
+        // console.log(c);
+
+        //真假
+        // var c = ('123' && null);
+        // console.log(c);
+
+        //假真
+        // var c = (null && '123');
+        // console.log(c);
+
+        // ||例子 给变量赋默认值
+        /* 
+        把serverstr赋值给username 因为不知道serverstr是否存在
+        所以要进行if判断 如果serverstr存在直接赋值给username
+        否则给username一个默认值
+        有更简单的写法吗?
+        */
+        var serverstr = '';
+        var username;
+        //serverstr存在直接赋值给username
+        if(serverstr){
+           username = serverstr;
+        }else{
+            //serverstr不存在 则给username指定一个默认值
+            username = 'admin'
+        }
+
+        //使用|| 给变量赋默认值
+        
+
+        
+    </script>
+</body>
+</html>

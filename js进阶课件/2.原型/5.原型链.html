@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <script>
+     /*原型链
+     每个对象都有__proto__属性，
+     当我们访问一个对象的属性或方法时，如果对象本身有这个属性则直接使用，如果这个对象内部不存在这个属性或方法，
+     那么他就会去原型对象__proto__里找这个属性，这个原型对象__proto__又会有自己的原型对象__proto__，
+     于是就这样 一直找下去,直到找到Object.property.__proto__,如果还没找到返回null 
+     */
+   //   function Person(){
+
+   //   }
+   //   Person.prototype.eat = function(){
+   //      console.log('吃饭');
+   //   }
+     //p原型对象的原型对象
+   //   p.__proto__.__proto__.drink = function(){
+   //    console.log('喝水');
+   //   }
+
+   //var p = new Person();
+   //谷歌浏览器中对象的[[Prototype]]属性就是__proto__
+
+  //  p.eat();
+  //  p.drink();
+  //  console.log(p);
+
+   /* 
+   思考:学习完原型链,利用原型共享数据的原理是不是就弄清楚了? 
+     我们利用原型链来分析下实例共享原型上的属性和方法的原理.
+   */
+    function Person(name){
+      this.name = name;
+    }
+    Person.prototype.eat = function(){
+      console.log('吃饭');
+    }
+
+    var p1 = new Person('刘备');
+    var p2 = new Person('关羽');
+    //当执行p1.eat()方法时,js引擎会先从p1这个实例对象上找eat方法,没找到,再从p1.__proto__
+    //原型对象上找,因为p1.__proto__等于Person.prototype,找到原型上的方法eat执行
+    p1.eat();
+    //p2.eat()原理同上,因此他们的eat方法都是原型上的方法,所以实例共享了原型的方法.
+    p2.eat();
+   </script>
+</body>
+</html>
